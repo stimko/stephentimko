@@ -1,0 +1,7 @@
+#projects
+	ul#projects-list
+		each project in projects
+			li(class='project')
+				label= project.name
+				label= project.description
+				img(src= project.image_url)
