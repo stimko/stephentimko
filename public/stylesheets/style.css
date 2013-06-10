@@ -1,7 +1,10 @@
-body{position:relative;padding:50px;font:18px "Lucida Grande",Helvetica,Arial,sans-serif}
+body{color:#a7a7a7;position:relative;padding:50px;font:18px "Verdana",Helvetica,Arial,sans-serif;background-color:#808080;-webkit-background-size:10px,10px;-moz-background-size:10px,10px;background-size:10px,10px}
 ul li{list-style-type:none}
 #contact{float:left}
 #projects{width:100%;float:left;}
 #projects #projects-list{min-width:700px;margin:0 auto;}
 #projects #projects-list li{width:300px;height:400px;padding:10px;float:left}
 a{color:#00b7ff}
+body{
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, .06) 1px, transparent 1px), linear-gradient(0, rgba(0, 0, 0, .06) 1px, transparent 1px)
+}
