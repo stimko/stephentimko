@@ -1,10 +1,8 @@
-body{color:#a7a7a7;position:relative;padding:50px;font:18px "Verdana",Helvetica,Arial,sans-serif;background-color:#808080;-webkit-background-size:10px,10px;-moz-background-size:10px,10px;background-size:10px,10px}
+body{color:#000;position:relative;padding:50px;font:18px "Verdana",Helvetica,Arial,sans-serif;background-color:#003e57;-webkit-background-size:50px,100px;-moz-background-size:50px,100px;background-size:50px,100px}
 ul li{list-style-type:none}
 #contact{float:left}
+#about{float:left}
 #projects{width:100%;float:left;}
 #projects #projects-list{min-width:700px;margin:0 auto;}
-#projects #projects-list li{width:300px;height:400px;padding:10px;float:left}
+#projects #projects-list li{-webkit-transform-origin:bottom left;-moz-transform-origin:bottom left;-o-transform-origin:bottom left;-ms-transform-origin:bottom left;transform-origin:bottom left;-webkit-transform:rotate(25deg);-moz-transform:rotate(25deg);-o-transform:rotate(25deg);-ms-transform:rotate(25deg);transform:rotate(25deg);font-size:12px;background:#fff;-webkit-border-radius:3px;border-radius:3px;width:100px;height:100px;padding:10px;float:left;margin:10px}
 a{color:#00b7ff}
-body{
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, .06) 1px, transparent 1px), linear-gradient(0, rgba(0, 0, 0, .06) 1px, transparent 1px)
-}

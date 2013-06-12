@@ -9,7 +9,7 @@ exports.list = function(req, res){
     if (err) return next(err);
       res.render('index', {
       title: 'My Projects',
-      projects: projects 
+      projects: projects
     });
   });
 };
