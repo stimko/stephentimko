@@ -1,7 +1,3 @@
-/*
- * GET home page.
- */
-
 var Project = require('../models/project');
 
 exports.list = function(req, res){
