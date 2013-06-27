@@ -1,8 +1,9 @@
-#projects
-	ul#projects-list
-		each project in projects
-			li(class='project')
-				.inner
-					label= project.name
-					label= project.description
-					img(src= project.image_url)
+ul#projects-list
+  each project in projects
+    li(class='project')
+      .inner
+        .left
+        .right
+        //label= project.name
+        //label= project.description
+        img(src= project.image_url)

@@ -1,10 +1,10 @@
+*
+  box-sizing border-box
 body
   color black
   position relative
-  padding 50px
   font 18px 'Didact Gothic', serif
-  background-color rgb(0, 62, 87)
-  background-size 50px, 100px
+  background-color white
 
 ul
   li
@@ -16,36 +16,72 @@ ul
 #about
   float left
 
-#projects
-  margin 0 auto
-  #projects-list 
-    li
-      float left
-      border 4px solid white
-      top 30
-      left 30
-      font-size 24px
-      background rgba(255, 255, 255, .5)
-      border-radius 3px
-      width 200px
-      height 300px
-      padding 10px
-      box-shadow -9px 9px 15px rgba(65, 65, 65, 0.17)
-      border-radius 3px
-      .inner
-        width 100%
-        height 100%
-        background white
 
-      img
-        width 200px
-        height 200px
-        background whitesmoke
-      label
-        color rgba(0,147,112, 1)
-        position absolute
-        bottom 0
-        font-smoothing: antialiased
+#projects-list
+  max-width 1170px
+  margin 0 auto
+  li
+    display inline-block
+    margin 30px 30px 30px
+    font-size 24px
+    background rgba(255, 255, 255, .5)
+    border-radius 3px
+    width 300px
+    height 300px
+    box-shadow -11px 13px 20px rgba(65,65,65,0.17)
+    position relative
+    perspective: 1700px;
+    perspective-origin: 0 50%;
+    .inner
+      transform-style preserve-3d
+      position relative
+      height:100%
+    &:hover
+      .left
+        transition transform 0.4s, opacity 0.1s
+        transform rotateY(-80deg)
+        opacity 1
+      .right
+        opacity 1
+        transform rotateY(70deg)
+        transition transform 0.4s, opacity 0.1s
+
+
+    .left
+      display block
+      position absolute
+      top 0
+      left 0
+      background grey
+      width 50%
+      height 100%
+      backface-visibility hidden
+      transform-origin 0 150px
+      transform rotateY(0deg)
+      transition transform 0.4s, opacity 0.1s 0.3s
+
+    .right
+      display block
+      position absolute
+      left 50%
+      top 0
+      background grey
+      width 50%
+      height 100%
+      backface-visibility hidden
+      transform-origin 150px 0
+      transform rotateY(0deg)
+      transition transform 0.4s, opacity 0.1s 0.3s
+
+    img
+      width 100%
+      height 100%
+      background whitesmoke
+    label
+      color rgba(0,147,112, 1)
+      position absolute
+      bottom 0
+      font-smoothing: antialiased
 a 
   color #00B7FF
 
