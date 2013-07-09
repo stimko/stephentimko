@@ -11,7 +11,7 @@ var project_schema = mongoose.Schema({
 	name: String,
 	client: String,
 	url: String,
-	technology: String,
+	technology: [String],
 	image_url: String,
 	description: String,
 });

@@ -5,12 +5,11 @@
 				.face.front
 					.inner
 						img(src= project.image_url)
-						//label= project.description		
+						//label= project.description
 				.face.back
 					.inner
 						i.icon-remove-circle.close
 						.technology
-							label Technologies:
-							br
-							.list= project.technology
+							each tech in project.technology
+								.tech(class= tech)= tech
 						label.project-name= project.name

@@ -1,4 +1,4 @@
-html,body{overflow:hidden;color:#00b7ff;position:relative;font:18px 'Didact Gothic',serif;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #003e57), color-stop(1, #1f272b));background:-webkit-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-moz-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-o-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-ms-linear-gradient(top, #003e57 0%, #1f272b 100%);background:linear-gradient(top, #003e57 0%, #1f272b 100%);height:100%;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600}
+html,body{overflow:hidden;color:#009fdd;position:relative;font:18px 'Didact Gothic',serif;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #003e57), color-stop(1, #1f272b));background:-webkit-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-moz-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-o-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-ms-linear-gradient(top, #003e57 0%, #1f272b 100%);background:linear-gradient(top, #003e57 0%, #1f272b 100%);height:100%;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600}
 ul li{list-style-type:none}
 #contact{float:left}
 #about{float:left}
@@ -6,11 +6,24 @@ ul li{list-style-type:none}
 #projects #projects-list li{position:absolute;-webkit-transform-origin:0 275px;-moz-transform-origin:0 275px;-o-transform-origin:0 275px;-ms-transform-origin:0 275px;transform-origin:0 275px;font-size:24px;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d;}
 #projects #projects-list li .face{position:absolute;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;backface-visibility:hidden;padding:10px;width:175px;height:275px;-webkit-border-radius:7px;border-radius:7px;-webkit-box-shadow:-25px 7px 40px rgba(0,183,255,0.2);box-shadow:-25px 7px 40px rgba(0,183,255,0.2);background:rgba(255,255,255,0.5);border:4px solid rgba(255,255,255,0.3);}
 #projects #projects-list li .face .inner{background:#fff;width:100%;height:100%;}
-#projects #projects-list li .face .inner > label{color:#00b7ff;padding:5px}
+#projects #projects-list li .face .inner > label{padding:5px}
 #projects #projects-list li .face.back{-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);-o-transform:rotateY(180deg);-ms-transform:rotateY(180deg);transform:rotateY(180deg);}
-#projects #projects-list li .face.back .project-name{font-size:18px}
+#projects #projects-list li .face.back .project-name{font-size:18px;width:100%;background:#f5f5f5}
 #projects #projects-list li .face.back .close{padding:5px;float:right;cursor:pointer;font-size:20px}
-#projects #projects-list li .face.back .technology{position:absolute;bottom:10px;font-size:14px;padding:5px}
+#projects #projects-list li .face.back .technology{position:absolute;bottom:10px;font-size:12px;padding:5px;}
+#projects #projects-list li .face.back .technology .tech{color:#fff;-webkit-border-radius:5px;border-radius:5px;padding:3px;float:left;margin:5px 5px 0 0;}
+#projects #projects-list li .face.back .technology .tech.Actionscript{background:#f00}
+#projects #projects-list li .face.back .technology .tech.Php{background:#800080}
+#projects #projects-list li .face.back .technology .tech.Coffeescript{background:#a52a2a}
+#projects #projects-list li .face.back .technology .tech.Javascript,#projects #projects-list li .face.back .technology .tech.jQuery{background:#008080}
+#projects #projects-list li .face.back .technology .tech.Flex{background:#808080}
+#projects #projects-list li .face.back .technology .tech.XML{background:#008000}
+#projects #projects-list li .face.back .technology .tech.HTML5{background:#ff7a00}
+#projects #projects-list li .face.back .technology .tech.Stylus{background:#a1bc06}
+#projects #projects-list li .face.back .technology .tech.Knockout{background:#996300}
+#projects #projects-list li .face.back .technology .tech.Durandal{background:#900}
+#projects #projects-list li .face.back .technology .tech.Papervision3D{background:#00f}
+#projects #projects-list li .face.back .technology .tech.Robotlegs{background:#f66}
 #projects #projects-list li .face.front{cursor:pointer}
-#projects #projects-list li img{-webkit-border-radius:7px;border-radius:7px;width:100%;height:100%;background:#f5f5f5}
-a{color:#00b7ff}
+#projects #projects-list li img{-webkit-border-radius:7px;border-radius:7px;width:100%;height:100%}
+a{color:inherit}
