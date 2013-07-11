@@ -26,7 +26,7 @@ $(function(){
     is_animating_out = true;
     $selected_card = null;
     $card.css('z-index', 0);
-    $card.transition({opacity: .1}, 300);
+    $card.transition({opacity: .05}, 300);
     $card.transition({scale:1,rotateY:'0deg', x:'0'}, 500, function(){
       $card.transition({rotate:old_degrees}, 300, function(){
         is_animating_out = false; 
@@ -43,7 +43,7 @@ $(function(){
           initial_hover = true;
           $projects.transition({opacity:1}, 300);
         } else {
-          $projects.not($selected_card).transition({opacity:.1}, 300); 
+          $projects.not($selected_card).transition({opacity:.05}, 300); 
         }       
       }
     }, 350);
@@ -63,7 +63,7 @@ $(function(){
       if(initial_hover){
         $('#projects-list').stop(true, true)
         initial_hover = false;
-        $projects.not($elem).css('opacity', .1);
+        $projects.not($elem).css('opacity', .05);
       }
     });
 
@@ -71,7 +71,7 @@ $(function(){
       $elem = $(event.currentTarget);
       hover_card = false;
       $elem.css('z-index', 0)
-      $elem.transition({opacity: .1}, 350);
+      $elem.transition({opacity: .05}, 350);
       assign_timer();
     });
 
@@ -81,7 +81,8 @@ $(function(){
       }
       $elem = $(event.currentTarget);
       remove_mouse_listeners($elem);
-      $elem.css('opacity', 1);    
+      $elem.css('opacity', 1);
+      $elem.addClass('animate-box-shadow')    
       if($selected_card){
         add_mouse_listeners($selected_card);     
         animate_out_selected_card($selected_card, selected_card_degree)
