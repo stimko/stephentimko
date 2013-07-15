@@ -54,6 +54,7 @@ $(function(){
     $elem.off('click');
     $elem.off('mouseenter');
     $elem.off('mouseleave');
+    $elem.off('mousemove');
   }
 
   function add_mouse_listeners($elem){
