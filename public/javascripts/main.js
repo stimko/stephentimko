@@ -59,11 +59,16 @@ $(function(){
     $elem.off('mouseenter').on('mouseenter', function(event){
       hover_card = true;
       $elem = $(event.currentTarget);
-      $elem.stop(true, true).transition({opacity: 1}, 350);
+      $elem.css('z-index', 1)
+      $elem.on('mousemove', function(){
+        $(this).css('z-index', 0).off('mousemove');
+      })
       if(initial_hover){
-        $('#projects-list').stop(true, true)
+        $projects.stop(true, true)
         initial_hover = false;
         $projects.not($elem).css('opacity', .05);
+      } else {
+        $elem.stop(true, true).transition({opacity: 1}, 350);
       }
     });
 

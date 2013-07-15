@@ -5,10 +5,10 @@ table{border-collapse:separate;border-spacing:0;vertical-align:middle}
 caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}
 a img{border:none}
 html,body{overflow:hidden;color:#009fdd;position:relative;font:18px 'Didact Gothic',serif;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #003e57), color-stop(1, #1f272b));background:-webkit-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-moz-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-o-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-ms-linear-gradient(top, #003e57 0%, #1f272b 100%);background:linear-gradient(top, #003e57 0%, #1f272b 100%);height:100%;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600}
-h1{color:#fff;font-size:3em;background:#000;text-shadow:0 1px 0 #999,0 2px 0 #888,0 3px 0 #777,0 4px 0 #666,0 5px 0 #555,0 6px 0 #444,0 7px 0 #333,0 8px 7px #001135}
+h1{color:#fff;font-size:3em;text-shadow:0 1px 0 #999,0 2px 0 #888,0 3px 0 #777,0 4px 0 #666,0 5px 0 #555,0 6px 0 #444,0 7px 0 #333,0 8px 7px #001135}
 ul li{list-style-type:none}
-.social{font-size:2.5em;float:right;}
-.social i{padding:2px}
+.social{padding-right:5px;font-size:2em;float:right;}
+.social i{color:#fff;text-shadow:0 1px 20px #00b7ff;padding:5px}
 #contact{float:left}
 #about{float:left}
 #projects{margin:0 auto;width:300px;overflow:auto;}
