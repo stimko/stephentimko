@@ -2,7 +2,8 @@ $(function(){
   var degree_offset = -45,
       hover_card = false,
       $projects = $('#projects-list li'),
-      current_timer,
+      stack_timer,
+      hover_timer,
       initial_hover = true
       selected_card_degree = '',
       is_animating_in = false,
@@ -36,8 +37,8 @@ $(function(){
   }
 
   function assign_timer(){
-    clearTimeout(current_timer);
-    current_timer = setTimeout(function(){
+    clearTimeout(stack_timer);
+    stack_timer = setTimeout(function(){
       if (!hover_card){
         if (!$selected_card){
           initial_hover = true;
@@ -56,13 +57,18 @@ $(function(){
   }
 
   function add_mouse_listeners($elem){
+
+    $elem.on('mousemove', function(){
+      clearTimeout(hover_timer);
+      hover_timer = setTimeout(function(){
+        $elem.css('z-index', 1);
+      }, 300)
+      $elem.css('z-index', 0);           
+    });
+
     $elem.off('mouseenter').on('mouseenter', function(event){
       hover_card = true;
       $elem = $(event.currentTarget);
-      $elem.css('z-index', 1)
-      $elem.on('mousemove', function(){
-        $(this).css('z-index', 0).off('mousemove');
-      })
       if(initial_hover){
         $projects.stop(true, true)
         initial_hover = false;
@@ -75,7 +81,8 @@ $(function(){
     $elem.off('mouseleave').on('mouseleave', function(event){
       $elem = $(event.currentTarget);
       hover_card = false;
-      $elem.css('z-index', 0)
+      clearTimeout(hover_timer);
+      $elem.css('z-index', 0);
       $elem.transition({opacity: .05}, 350);
       assign_timer();
     });
