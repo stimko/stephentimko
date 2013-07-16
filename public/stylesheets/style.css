@@ -5,9 +5,9 @@ table{border-collapse:separate;border-spacing:0;vertical-align:middle}
 caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}
 a img{border:none}
 html,body{overflow:auto;color:#009fdd;position:relative;font:18px 'Didact Gothic',serif;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #003e57), color-stop(1, #1f272b));background:-webkit-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-moz-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-o-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-ms-linear-gradient(top, #003e57 0%, #1f272b 100%);background:linear-gradient(top, #003e57 0%, #1f272b 100%);height:100%;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600}
-h1{color:#fff;font-size:3em;text-shadow:0 1px 10px #00b7ff}
+h1{color:#fff;font-size:2.3em;text-shadow:0 1px 10px #00b7ff}
 ul li{list-style-type:none}
-.social{padding-right:5px;font-size:2em;float:right;}
+.social{padding:4px 7px;border-bottom:2px solid #fff;border-left:1px solid #fff;-webkit-border-radius:38px;border-radius:38px;font-size:1.5em;float:right;}
 .social i{color:#fff;text-shadow:0 1px 10px #00b7ff;padding:5px}
 #contact{float:left}
 #about{float:left}
