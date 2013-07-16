@@ -17,7 +17,7 @@ $(function(){
     selected_card_degree = $selected_card.css('rotate');
     $selected_card.css('z-index', 1);
     $selected_card.transition({rotate:0}, 300, function(){
-      $selected_card.transition({scale:1.3,rotateY:'-180deg', x:'75px'}, 500, function(){
+      $selected_card.transition({scale:1.3,rotateY:'-180deg', x:'155px'}, 500, function(){
         is_animating_in = false;
       });
     });
@@ -59,7 +59,7 @@ $(function(){
 
   function add_mouse_listeners($elem){
 
-    $elem.on('mousemove', function(){
+    $elem.off('mousemove').on('mousemove', function(){
       clearTimeout(hover_timer);
       hover_timer = setTimeout(function(){
         $elem.css('z-index', 1);

@@ -4,14 +4,14 @@ ol,ul{list-style:none}
 table{border-collapse:separate;border-spacing:0;vertical-align:middle}
 caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}
 a img{border:none}
-html,body{overflow:hidden;color:#009fdd;position:relative;font:18px 'Didact Gothic',serif;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #003e57), color-stop(1, #1f272b));background:-webkit-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-moz-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-o-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-ms-linear-gradient(top, #003e57 0%, #1f272b 100%);background:linear-gradient(top, #003e57 0%, #1f272b 100%);height:100%;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600}
+html,body{overflow:auto;color:#009fdd;position:relative;font:18px 'Didact Gothic',serif;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #003e57), color-stop(1, #1f272b));background:-webkit-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-moz-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-o-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-ms-linear-gradient(top, #003e57 0%, #1f272b 100%);background:linear-gradient(top, #003e57 0%, #1f272b 100%);height:100%;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600}
 h1{color:#fff;font-size:3em;text-shadow:0 1px 10px #00b7ff}
 ul li{list-style-type:none}
 .social{padding-right:5px;font-size:2em;float:right;}
 .social i{color:#fff;text-shadow:0 1px 10px #00b7ff;padding:5px}
 #contact{float:left}
 #about{float:left}
-#projects{margin:0 auto;width:300px;overflow:auto;}
+#projects{margin:30px auto;width:300px;overflow:auto;height:400px;}
 #projects #projects-list li{position:absolute;-webkit-transform-origin:0 275px;-moz-transform-origin:0 275px;-o-transform-origin:0 275px;-ms-transform-origin:0 275px;transform-origin:0 275px;font-size:24px;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d;}
 #projects #projects-list li .face{position:absolute;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;backface-visibility:hidden;padding:5px;width:175px;height:275px;-webkit-border-radius:4px;border-radius:4px;-webkit-box-shadow:-25px 7px 40px rgba(0,183,255,0.2);box-shadow:-25px 7px 40px rgba(0,183,255,0.2);background:rgba(255,255,255,0.5);border:3px solid rgba(255,255,255,0.3);}
 #projects #projects-list li .face .inner{background:#fff;width:100%;height:100%;-webkit-border-radius:4px;border-radius:4px;}
