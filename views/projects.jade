@@ -9,7 +9,8 @@
 				.face.back
 					.inner
 						i.icon-remove-circle.close
+						label.project-name= project.name
 						.technology
 							each tech in project.technology
 								.tech(class= tech)= tech
-						label.project-name= project.name
+						

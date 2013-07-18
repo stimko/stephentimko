@@ -1,17 +1,17 @@
-$(function(){
+$(function () {
   var degree_offset = -45,
-      hover_card = false,
-      $projects = $('#projects-list li'),
-      stack_timer,
-      hover_timer,
-      initial_hover = true
-      selected_card_degree = '',
-      is_animating_in = false,
-      is_animating_out = false,
-      ghost_mouse_leave = true,
-      $selected_card = null;
+        hover_card = false,
+        $projects = $('#projects-list li'),
+        stack_timer,
+        hover_timer,
+        initial_hover = true
+        selected_card_degree = '',
+        is_animating_in = false,
+        is_animating_out = false,
+        ghost_mouse_leave = true,
+        $selected_card = null;
 
-  function animate_in_selected_card($card){
+  function animate_in_selected_card ($card) {
     is_animating_in = true;
     $selected_card = $card;
     selected_card_degree = $selected_card.css('rotate');
@@ -19,7 +19,7 @@ $(function(){
     $selected_card.transition({rotate:0}, 300, function(){
       $selected_card.transition({scale:1.3,rotateY:'-180deg', x:'155px'}, 500, function(){
         is_animating_in = false;
-      });
+      }); 
     });
   }
 

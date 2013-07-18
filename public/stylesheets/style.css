@@ -7,31 +7,33 @@ a img{border:none}
 html,body{overflow:auto;color:#009fdd;position:relative;font:18px 'Didact Gothic',serif;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #003e57), color-stop(1, #1f272b));background:-webkit-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-moz-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-o-linear-gradient(top, #003e57 0%, #1f272b 100%);background:-ms-linear-gradient(top, #003e57 0%, #1f272b 100%);background:linear-gradient(top, #003e57 0%, #1f272b 100%);height:100%;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600}
 h1{color:#fff;font-size:2.3em;text-shadow:0 1px 10px #00b7ff}
 ul li{list-style-type:none}
-.social{padding:4px 7px;border-bottom:2px solid #fff;border-left:1px solid #fff;-webkit-border-radius:38px;border-radius:38px;font-size:1.5em;float:right;}
+.social{padding:4px 7px;border-bottom:4px solid #fff;border-left:1px solid #fff;-webkit-border-radius:38px;border-radius:38px;font-size:1.5em;float:right;}
 .social i{color:#fff;text-shadow:0 1px 10px #00b7ff;padding:5px}
 #contact{float:left}
 #about{float:left}
-#projects{margin:30px auto;width:300px;overflow:auto;height:400px;}
+#projects{margin-top:85px;padding:0 476px;height:400px;}
+#projects #projects-list{width:145px;margin:0 auto;}
 #projects #projects-list li{position:absolute;-webkit-transform-origin:0 275px;-moz-transform-origin:0 275px;-o-transform-origin:0 275px;-ms-transform-origin:0 275px;transform-origin:0 275px;font-size:24px;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d;}
 #projects #projects-list li .face{position:absolute;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;backface-visibility:hidden;padding:5px;width:175px;height:275px;-webkit-border-radius:4px;border-radius:4px;-webkit-box-shadow:-25px 7px 40px rgba(0,183,255,0.2);box-shadow:-25px 7px 40px rgba(0,183,255,0.2);background:rgba(255,255,255,0.5);border:3px solid rgba(255,255,255,0.3);}
 #projects #projects-list li .face .inner{background:#fff;width:100%;height:100%;-webkit-border-radius:4px;border-radius:4px;}
 #projects #projects-list li .face .inner > label{padding:5px}
 #projects #projects-list li .face.back{-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);-o-transform:rotateY(180deg);-ms-transform:rotateY(180deg);transform:rotateY(180deg);}
-#projects #projects-list li .face.back .project-name{font-size:18px;width:100%;background:#f5f5f5}
-#projects #projects-list li .face.back .close{padding:5px;float:right;cursor:pointer;font-size:20px}
-#projects #projects-list li .face.back .technology{position:absolute;bottom:10px;font-size:12px;padding:5px;}
+#projects #projects-list li .face.back .project-name{color:#0077a7;-webkit-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0;font-size:19px;display:block;border-bottom:2px dotted #c9c9c9}
+#projects #projects-list li .face.back .close{color:#0077a7;padding:5px;float:right;cursor:pointer;font-size:20px}
+#projects #projects-list li .face.back .technology{font-size:12px;padding:5px;}
 #projects #projects-list li .face.back .technology .tech{color:#fff;-webkit-border-radius:5px;border-radius:5px;padding:3px;float:left;margin:5px 5px 0 0;}
 #projects #projects-list li .face.back .technology .tech.Actionscript{background:#f00}
 #projects #projects-list li .face.back .technology .tech.Php{background:#800080}
 #projects #projects-list li .face.back .technology .tech.Coffeescript{background:#a26f6f}
-#projects #projects-list li .face.back .technology .tech.Javascript,#projects #projects-list li .face.back .technology .tech.jQuery{background:#008080}
+#projects #projects-list li .face.back .technology .tech.Javascript{background:#f5ce95}
+#projects #projects-list li .face.back .technology .tech.jQuery{background:#008080}
 #projects #projects-list li .face.back .technology .tech.Flex{background:#808080}
 #projects #projects-list li .face.back .technology .tech.XML{background:#008000}
 #projects #projects-list li .face.back .technology .tech.HTML5{background:#ff630b}
 #projects #projects-list li .face.back .technology .tech.Stylus{background:#a1bc06}
 #projects #projects-list li .face.back .technology .tech.Knockout{background:#ff630b}
 #projects #projects-list li .face.back .technology .tech.Durandal{background:#bd0000}
-#projects #projects-list li .face.back .technology .tech.Papervision3D{background:#00f}
+#projects #projects-list li .face.back .technology .tech.Papervision3D{background:#00007c}
 #projects #projects-list li .face.back .technology .tech.Robotlegs{background:#f66}
 #projects #projects-list li .face.front{cursor:pointer}
 #projects #projects-list li img{-webkit-border-radius:4px;border-radius:4px;width:100%;height:100%}
