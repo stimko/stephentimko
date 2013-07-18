@@ -9,7 +9,7 @@
 				.face.back
 					.inner
 						i.icon-remove-circle.close
-						label.project-name= project.name
+						a.project-name(href= project.url)= project.name
 						.technology
 							each tech in project.technology
 								.tech(class= tech)= tech
