@@ -30,6 +30,7 @@ $(function () {
     $card.transition({opacity: .05}, 300);
     $card.transition({scale:1,rotateY:'0deg', x:'0'}, 500, function(){
       $card.transition({rotate:old_degrees}, 300, function(){
+        add_mouse_listeners($card);
         is_animating_out = false; 
         assign_timer();
       });
@@ -96,8 +97,7 @@ $(function () {
       remove_mouse_listeners($elem);
       $elem.css('opacity', 1);
       $elem.addClass('animate-box-shadow')    
-      if($selected_card){
-        add_mouse_listeners($selected_card);     
+      if($selected_card){     
         animate_out_selected_card($selected_card, selected_card_degree)
         animate_in_selected_card($elem)
       } else {

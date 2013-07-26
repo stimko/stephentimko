@@ -1,30 +1,44 @@
 global-reset()
 
+background-radial-gradient( alignment, type, color1, color2 )
+  background -webkit-radial-gradient( alignment, type, color1, color2 )
+  background -moz-radial-gradient( alignment, type, color1, color2 )
+  background -mz-radial-gradient( alignment, type, color1, color2 )
+
 html
 body
-  overflow auto
   color white
   position relative
-  font 18px 'Didact Gothic', serif
-  background linear-gradient(top, rgb(0, 62, 87), rgb(31, 39, 43))
+  font 18px 'Segoe UI', serif
+  background linear-gradient(top, #003457, rgb(31, 39, 43))
   height 100%
   perspective 1600
+  padding 15px
+
+.header
+  padding 0 0 10px 10px
+  text-shadow 0px 1px 10px rgba(0,183,255,1)
+  background linear-gradient(left, rgba(255,255,255,0.1), rgba(255,255,255,0))
+  .position
+    font-size 16px
+
+#about
+  font-size 20px
+  padding 20px
 
 h1
   color white
   font-size 2.3em
-  text-shadow 0px 1px 10px rgba(0,183,255,1)
-  &:before
-    content ''
-    background linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255,255,255,0.05) 33.33333333333333%, rgba(255,255,255,0) 100%)
-    position absolute
-    left 0
-    top 0
-    width 100%
-    height 62px
+
 ul
   li
     list-style-type: none
+
+.section-header
+  padding 20px
+  float:left
+  font-size 29px
+  text-shadow 0px 1px 10px rgba(0,183,255,1)
 
 .social
   padding 4px 7px
@@ -38,16 +52,13 @@ ul
     text-shadow 0px 1px 10px rgba(0,183,255,1)
     padding 5px
 
-#contact
-  float left
-
-#about
-  float left
-
 #projects
-  margin-top 85px
-  padding 0 476px
+  padding 135px 476px 0 476px
   height 400px
+  background linear-gradient(left, rgba(255,255,255,0.1), rgba(255,255,255,0))
+  border-left 8px solid rgba(255, 255, 255, 0.34)
+  border-top 10px solid rgba(255, 255, 255, 0.17)
+  border-radius 5px
   #projects-list
     width 145px 
     margin 0 auto
@@ -60,10 +71,10 @@ ul
         position absolute
         backface-visibility hidden
         padding 5px
-        width 175px
-        height 275px
+        width 195px
+        height 295px
         border-radius 4px
-        box-shadow -25px 7px 40px rgba(0, 183, 255, .2)
+        box-shadow -11px 10px 31px rgba(255, 255, 255, 0.13)
         background rgba(255, 255, 255, .5)
         border 3px solid rgba(255, 255, 255, .3)
         .inner
@@ -78,9 +89,10 @@ ul
           .project-name
             padding 5px
             color #0077A7 
-            font-size 17px
+            font-size 20px
             display block
             position relative
+            width 164px
             &:before
               content ''
               background linear-gradient(left, #CCC, rgba(245,245,245, 0))
@@ -88,15 +100,17 @@ ul
               left 0
               bottom -2px
               width 100%
-              height 6px
+              height 4px
           .close
             color #0077A7
             padding 5px
-            float right
+            position absolute
+            top 5px
+            right 5px
             cursor pointer
             font-size 20px
           .technology
-            font-size 12px
+            font-size 14px
             padding 5px
             .tech
               color white
@@ -117,7 +131,7 @@ ul
               &.Flex
                 background grey
               &.XML
-                background #52E252
+                background #259125
               &.HTML5
                 background rgb(255, 99, 11)
               &.Stylus
@@ -140,3 +154,5 @@ ul
         height 100%
 a 
   text-decoration none
+
+

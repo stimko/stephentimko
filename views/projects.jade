@@ -1,3 +1,4 @@
+h2.section-header Projects
 #projects
 	ul#projects-list
 		each project in projects
@@ -8,8 +9,8 @@
 						//label= project.description
 				.face.back
 					.inner
-						i.icon-remove-circle.close
 						a.project-name(href= project.url)= project.name
+						i.icon-remove-circle.close
 						.technology
 							each tech in project.technology
 								.tech(class= tech)= tech
