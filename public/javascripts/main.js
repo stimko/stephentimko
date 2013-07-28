@@ -23,14 +23,19 @@ $(function () {
     });
   }
 
-  function animate_out_selected_card($card, old_degrees){
+  function animate_out_selected_card($card, old_degrees, new_selected){
+    new_selected = typeof new_selected !== 'undefined' ? new_selected : true;
     is_animating_out = true;
     $selected_card = null;
     $card.css('z-index', 0);
     $card.transition({opacity: .05}, 300);
     $card.transition({scale:1,rotateY:'0deg', x:'0'}, 500, function(){
       $card.transition({rotate:old_degrees}, 300, function(){
-        add_mouse_listeners($card);
+        if (new_selected){ 
+          add_mouse_listeners($card); 
+        } else {
+          add_click_listeners($card);
+        }
         is_animating_out = false; 
         assign_timer();
       });
@@ -58,7 +63,7 @@ $(function () {
     $elem.off('mousemove');
   }
 
-  function add_mouse_listeners($elem){
+  function add_hover_listeners($elem){
 
     $elem.off('mousemove').on('mousemove', function(){
       clearTimeout(hover_timer);
@@ -71,7 +76,7 @@ $(function () {
     $elem.off('mouseenter').on('mouseenter', function(event){
       hover_card = true;
       $elem = $(event.currentTarget);
-      if(initial_hover){
+      if (initial_hover){
         $projects.stop(true, true)
         initial_hover = false;
         $projects.not($elem).css('opacity', .05);
@@ -88,22 +93,30 @@ $(function () {
       $elem.transition({opacity: .05}, 350);
       assign_timer();
     });
+  }
+
+  function add_click_listeners($elem){
 
     $elem.off('click').on('click', function(event){
-      if((is_animating_in || is_animating_out) ||($selected_card !== null && $selected_card[0] === event.currentTarget)){
+      if ((is_animating_in || is_animating_out) ||($selected_card !== null && $selected_card[0] === event.currentTarget)){
         return;
       }
       $elem = $(event.currentTarget);
       remove_mouse_listeners($elem);
       $elem.css('opacity', 1);
-      $elem.addClass('animate-box-shadow')    
-      if($selected_card){     
+      $('#projects-list').transition({x:'100px'}, 300);  
+      if ($selected_card){     
         animate_out_selected_card($selected_card, selected_card_degree)
         animate_in_selected_card($elem)
       } else {
         animate_in_selected_card($elem)  
       }
     });
+  }
+
+  function add_mouse_listeners($elem){
+    add_hover_listeners($elem);
+    add_click_listeners($elem);
   }
 
   
@@ -113,17 +126,18 @@ $(function () {
     degree_offset += 10;
     add_mouse_listeners($elem);
     $('.back .close', $elem).on('click', function(event){
-      if(is_animating_in || is_animating_out){
+      if (is_animating_in || is_animating_out){
         return;
       }
       event.stopImmediatePropagation();
+      $('#projects-list').transition({x:'0'}, 300);
       $card = $(event.currentTarget).closest('li');
       $card.on('mouseleave.phantom', function(){
         $card.off('mouseleave.phantom');
-        add_mouse_listeners($card);     
+        add_hover_listeners($card);     
       });  
       hover_card = false;
-      animate_out_selected_card($card, selected_card_degree)
+      animate_out_selected_card($card, selected_card_degree, false)
     });
   });
 });
