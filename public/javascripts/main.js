@@ -104,6 +104,7 @@ $(function () {
       $elem = $(event.currentTarget);
       remove_mouse_listeners($elem);
       $elem.css('opacity', 1);
+      $('#projects').addClass('expanded');
       $('#projects-list').transition({x:'100px'}, 300);  
       if ($selected_card){     
         animate_out_selected_card($selected_card, selected_card_degree)
@@ -132,6 +133,7 @@ $(function () {
       event.stopImmediatePropagation();
       $('#projects-list').transition({x:'0'}, 300);
       $card = $(event.currentTarget).closest('li');
+      $('#projects').removeClass('expanded');
       $card.on('mouseleave.phantom', function(){
         $card.off('mouseleave.phantom');
         add_hover_listeners($card);     
