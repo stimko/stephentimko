@@ -73,7 +73,7 @@ ul
   height 400px
   &.expanded
     padding-left 600px
-    padding right 600px
+    padding-right 600px
   #projects-list
     width 145px 
     margin 0 auto
@@ -108,7 +108,9 @@ ul
             display block
             position relative
             width 164px
-            &:before
+            &:hover
+              text-decoration underline
+            &::before
               content ''
               background linear-gradient(left, #CCC, rgba(245,245,245, 0))
               position absolute
