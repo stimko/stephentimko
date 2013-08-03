@@ -34,7 +34,7 @@ $(function () {
         if (!phantom_hover){ 
           add_mouse_listeners($card);
         }
-        $card.transition({opacity: .05}, 350); 
+        $card.transition({opacity: .1}, 350); 
         is_animating_out = false; 
         assign_timer();
       });
@@ -48,12 +48,8 @@ $(function () {
     }
     stack_timer = setTimeout(function(){
       if (!hover_card){
-        if (!$selected_card){
-          initial_hover = true;
-          $projects.transition({opacity:1}, 300);
-        } else {
-          $projects.not($selected_card).transition({opacity:.05}, 300); 
-        }       
+        initial_hover = true;
+        $projects.not($selected_card).transition({opacity:1}, 300);     
       }
     }, 350);
   }
@@ -81,7 +77,7 @@ $(function () {
       if (initial_hover){
         $projects.stop();
         initial_hover = false;
-        $projects.not($elem).css('opacity', .05);
+        $projects.not($elem).not($selected_card).css('opacity', .1);
       } else {
         $elem.stop(true, true).transition({opacity: 1}, 350);
       }
@@ -92,7 +88,7 @@ $(function () {
       hover_card = false;
       clearTimeout(hover_timer);
       $elem.css('z-index', 0);
-      $elem.transition({opacity: .05}, 350);
+      $elem.transition({opacity: .1}, 350);
       assign_timer();
     });
   }
