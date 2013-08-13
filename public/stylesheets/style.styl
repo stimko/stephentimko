@@ -8,43 +8,62 @@ background-radial-gradient( alignment, type, color1, color2 )
 html
 body
   height 100%
-  color white
+  color #224e6d
   font 18px 'Segoe UI', serif
   background white
   //background #003457
-  perspective 1600
   // padding 15px
 
 body
   overflow-x hidden
 
+#menu
+  border-bottom-right-radius 10px
+  padding 13px
+  background #E6E6E6
+  top 81px
+  border-right 2px solid #224e6d
+  border-bottom 5px solid #224e6d  
+  position fixed
+  box-shadow -8px 5px 26px rgba(0, 0, 0, 0.21)
+  li
+    margin-bottom 10px
+    a
+      color #224e6d
+  
 .section
   border-radius 4px
   margin-bottom 20px
   background whitesmoke
+  box-shadow -8px 5px 26px rgba(0, 0, 0, 0.21)
   //background linear-gradient(left, rgba(255,255,255,0.1), rgba(255,255,255,0))
+  .section-content
+    padding 22px
 
- .content
-   overflow-x hidden
-   padding 116px 30px 0 30px
+.content
+  overflow-x hidden
+  padding 97px 60px 0 60px
 
 .header
   width 100%
-  padding 0 40px 10px 10px
+  padding 0 40px 12px 10px
   text-shadow 0px 1px 10px rgba(0,183,255,1)
+  border-radius 0
+  box-shadow -8px 5px 8px rgba(0,0,0,0.21)
+  //z-index 10000
   background #224E6D
-  //background linear-gradient(left, #224E6D 74%, rgba(36, 70, 94, 0) 100%)
+  //background linear-gradient(top, #224E6D 92%, rgba(36, 70, 94, 0) 100%)
   //SAVING background linear-gradient(left, rgba(255,255,255,0.1), rgba(255,255,255,0))
   position fixed
   // border-top-left-radius 5px
   // border-left 7px solid rgba(255, 255, 255, 0.16)
   // border-top 5px solid rgba(255,255,255,0.17)
   .position
+    color white
     font-size 16px
 
 #about
   font-size 20px
-  padding 20px 20px 20px 230px
 
 h1
   color white
@@ -57,15 +76,8 @@ ul
 .section-header
   padding 8px
   font-size 1.7em
-  text-shadow 0px 1px 10px rgba(0,183,255,1)
-  position relative
-  display inline-block
-  &::after
-    font-family FontAwesome
-    content: '\F013'
-    position absolute
-    bottom -40px
-    right 10px
+  //text-shadow 0px 1px 10px rgba(0,183,255,1)
+
 
 .social
   padding 4px 7px
@@ -77,14 +89,16 @@ ul
     color white
     text-shadow 0px 1px 10px rgba(0,183,255,1)
     padding 5px
+    cursor pointer
 
 #projects
-  padding 105px 400px 0 400px
+  padding 95px 400px 0 400px
   height 400px
   &.expanded
     padding-left 600px
     padding-right 600px
   #projects-list
+    perspective 1600
     width 145px 
     margin 0 auto
     li
@@ -109,7 +123,7 @@ ul
           & > label
             padding 5px
         &.back
-          box-shadow -11px 10px 31px rgba(68, 68, 68, 0.13)
+          box-shadow -8px 8px 39px rgba(0, 0, 0, 0.21)
           transform rotateY(180deg)
           .project-name
             padding 5px

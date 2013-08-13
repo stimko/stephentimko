@@ -34,7 +34,9 @@ $(function () {
         if (!phantom_hover){ 
           add_mouse_listeners($card);
         }
-        $card.transition({opacity: .1}, 350); 
+        if(hover_card){
+          $card.transition({opacity: .1}, 350); 
+        }
         is_animating_out = false; 
         assign_timer();
       });
@@ -102,7 +104,7 @@ $(function () {
       var $elem = $(event.currentTarget);
       remove_mouse_listeners($elem);
       $elem.css('opacity', 1);
-      $('#projects').transition({paddingLeft:'700px'}, 300);  
+      $('#projects').transition({paddingLeft:'700px'}, 500);  
       if ($selected_card){     
         animate_out_selected_card($selected_card, selected_card_degree)
         animate_in_selected_card($elem)
@@ -116,7 +118,6 @@ $(function () {
     add_hover_listeners($elem);
     add_click_listeners($elem);
   }
-
   
   $projects.each(function(index, elem){
   	var $elem = $(elem);
@@ -128,7 +129,7 @@ $(function () {
         return;
       }
       event.stopImmediatePropagation();
-      $('#projects').transition({paddingLeft:'400px'}, 300);
+      $('#projects').transition({paddingLeft:'400px'}, 500);
       var $card = $(event.currentTarget).closest('li');
       phantom_hover = true;
       $card.on('mouseleave.phantom', function(){

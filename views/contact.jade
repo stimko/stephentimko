@@ -1,9 +1,16 @@
-h2.section-header Contact
+//- h2.section-header.Contact Contact
 #contact.section
-	label Name
-	input(type="text")
-	label Email
-	input(type="text")
-	label Message
-	textarea
-	button(type= "submit")
+	form.section-content
+		fieldset
+			div.field
+				label Name
+				input(type="text")
+			div.field			
+				label Email
+				input(type="text")
+			div.field
+				label Message
+				textarea
+		fieldset
+			nav		
+				button Send
