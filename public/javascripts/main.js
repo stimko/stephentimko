@@ -104,12 +104,15 @@ $(function () {
       var $elem = $(event.currentTarget);
       remove_mouse_listeners($elem);
       $elem.css('opacity', 1);
-      $('#projects').transition({paddingLeft:'700px'}, 500);  
+      $('#projects').transition({paddingLeft:'555px'}, 500);
+      $('#projects-list').addClass('selected');
       if ($selected_card){     
-        animate_out_selected_card($selected_card, selected_card_degree)
-        animate_in_selected_card($elem)
+        animate_out_selected_card($selected_card, selected_card_degree);
+        animate_in_selected_card($elem);
       } else {
-        animate_in_selected_card($elem)  
+        hover_card = false;
+        animate_in_selected_card($elem);
+        assign_timer();  
       }
     });
   }
@@ -128,8 +131,9 @@ $(function () {
       if (is_animating_in || is_animating_out){
         return;
       }
+      $('#projects-list').removeClass('selected');
       event.stopImmediatePropagation();
-      $('#projects').transition({paddingLeft:'400px'}, 500);
+      $('#projects').transition({paddingLeft:'225px'}, 500);
       var $card = $(event.currentTarget).closest('li');
       phantom_hover = true;
       $card.on('mouseleave.phantom', function(){
