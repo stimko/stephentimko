@@ -8,26 +8,6 @@ background-radial-gradient( alignment, type, color1, color2 )
 $blue = #224e6d
 textglow()
    text-shadow 0px 1px 10px rgba(0,183,255,1)
-
-@media all and (max-width: 1223px)
-  .content 
-    padding-top 53px !important
-  .header 
-    padding 6px !important
-    .me
-      font-weight bold
-      font-size 22px
-    .position 
-      display none
-  #menu
-    top 42px !important
-
-
-// @media all and (max-width: 1010px)
-//   #projects
-//     #projects-list:not(.selected)
-//       z-index 7 !important
-
   
 html
 body
@@ -71,7 +51,7 @@ body
     padding 18px
 
 .content
-  padding 90px 63px 0 63px
+  padding 96px 63px 10px 63px
   min-width 676px
 
 .header
@@ -137,6 +117,7 @@ ul
     float left
 
 .social
+  top 0
   padding 4px 7px
   position fixed
   border-radius 38px
@@ -170,7 +151,7 @@ ul
     position relative
     z-index 1001
     perspective 1600
-    width 145px 
+    width 185px 
     margin 0 auto
     li
       position absolute
@@ -261,4 +242,23 @@ ul
 a 
   text-decoration none
 
+@media all and (max-width: 1223px)
+  .social
+    padding 0
+  .content 
+    padding-top 77px 
+  .header 
+    padding 6px 
+    .me
+      font-weight bold
+      font-size 24px
+    .position 
+      font-size 14px
+  #menu
+    top 63px
+
+@media all and (max-width: 920px)
+  #projects
+    #projects-list
+      z-index 999 
 

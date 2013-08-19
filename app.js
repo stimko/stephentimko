@@ -5,6 +5,7 @@
 
 var express = require('express')
   , index = require('./routes/index')
+  , mailer = require('./routes/mailer')
   , http = require('http')
   , stylus = require('stylus')
   , nib = require('nib')
@@ -46,6 +47,8 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.list);
+
+app.post('/send_mail', mailer.send_mail);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

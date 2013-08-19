@@ -1,6 +1,6 @@
 $(function () {
   var degree_offset = -45,
-        hover_card = false,
+        hover_card = null,
         $projects = $('#projects-list li'),
         stack_timer,
         hover_timer,
@@ -33,10 +33,12 @@ $(function () {
       $card.transition({rotate:old_degrees}, 300, function(){
         if (!phantom_hover){ 
           add_mouse_listeners($card);
-        }
-        if(hover_card){
-          $card.transition({opacity: .1}, 350); 
-        }
+        };
+        setTimeout(function(){
+          if(hover_card && hover_card[0] !== $card[0]){
+            $card.transition({opacity: .1}, 350); 
+          }
+        }, 500);
         is_animating_out = false; 
         assign_timer();
       });
@@ -74,8 +76,8 @@ $(function () {
     });
 
     $elem.off('mouseenter').on('mouseenter', function(event){
-      hover_card = true;
       var $elem = $(event.currentTarget);
+      hover_card = $elem;
       if (initial_hover){
         $projects.stop();
         initial_hover = false;
@@ -87,7 +89,7 @@ $(function () {
 
     $elem.off('mouseleave').on('mouseleave', function(event){
       var $elem = $(event.currentTarget);
-      hover_card = false;
+      hover_card = null;
       clearTimeout(hover_timer);
       $elem.css('z-index', 0);
       $elem.transition({opacity: .1}, 350);
@@ -104,15 +106,15 @@ $(function () {
       var $elem = $(event.currentTarget);
       remove_mouse_listeners($elem);
       $elem.css('opacity', 1);
+      $projects.not($elem).not($selected_card).transition({opacity: .1}, 350);
       $('#projects').transition({paddingLeft:'555px'}, 500);
-      $('#projects-list').addClass('selected');
+      hover_card = null;
+      assign_timer();  
       if ($selected_card){     
         animate_out_selected_card($selected_card, selected_card_degree);
         animate_in_selected_card($elem);
       } else {
-        hover_card = false;
         animate_in_selected_card($elem);
-        assign_timer();  
       }
     });
   }
@@ -122,6 +124,22 @@ $(function () {
     add_click_listeners($elem);
   }
   
+  $('#send_mail').on('click', function(event){
+    event.preventDefault();
+    $.ajax({
+      contentType: 'application/json',
+      type: 'POST',
+      url: '/send_mail',
+      data: JSON.stringify({"hello": "there"}),
+      success: function(){
+        console.log('email sent');
+      },
+      error: function(){
+        console.log('ERROR');
+      }
+    });
+  });
+
   $projects.each(function(index, elem){
   	var $elem = $(elem);
     $elem.transition({rotate: degree_offset + 'deg'});
@@ -131,7 +149,6 @@ $(function () {
       if (is_animating_in || is_animating_out){
         return;
       }
-      $('#projects-list').removeClass('selected');
       event.stopImmediatePropagation();
       $('#projects').transition({paddingLeft:'225px'}, 500);
       var $card = $(event.currentTarget).closest('li');
@@ -143,7 +160,7 @@ $(function () {
           add_mouse_listeners($card);
         }    
       });  
-      hover_card = false;
+      hover_card = null;
       animate_out_selected_card($card, selected_card_degree, false)
     });
   });
