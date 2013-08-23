@@ -55,7 +55,7 @@ $(function () {
         initial_hover = true;
         $projects.not($selected_card).transition({opacity:1}, 300);     
       }
-    }, 350);
+    }, 750);
   }
 
   function remove_mouse_listeners($elem){
@@ -79,11 +79,16 @@ $(function () {
       var $elem = $(event.currentTarget);
       hover_card = $elem;
       if (initial_hover){
-        $projects.stop();
+        if(!is_animating_in && ! is_animating_out){
+          $projects.stop();
+        }
         initial_hover = false;
         $projects.not($elem).not($selected_card).css('opacity', .1);
       } else {
-        $elem.stop(true, true).transition({opacity: 1}, 350);
+        if(!is_animating_in && ! is_animating_out){
+          $elem.stop();
+        }
+        $elem.transition({opacity: 1}, 350);
       }
     });
 
@@ -109,6 +114,7 @@ $(function () {
       $projects.not($elem).not($selected_card).transition({opacity: .1}, 350);
       $('#projects').transition({paddingLeft:'555px'}, 500);
       hover_card = null;
+      initial_hover = true;
       assign_timer();  
       if ($selected_card){     
         animate_out_selected_card($selected_card, selected_card_degree);
@@ -123,21 +129,46 @@ $(function () {
     add_hover_listeners($elem);
     add_click_listeners($elem);
   }
+
+  function validate_form(){
+    var form_valid = true;
+
+    form_valid = validate($('#email'), new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\\s*$"))
+    form_valid = validate($('#message'), new RegExp("^([A-z]+\\s*)+$"))
+    form_valid = validate($('#name'), new RegExp("^([A-z]+\\s*)+$"))
+
+    return form_valid
+  };
+
+  function validate($input, regex){
+
+    value = $input.val()
+
+    if(!value.match(regex)){
+      $input.addClass('invalid');
+      return false
+    } else {
+      $input.removeClass('invalid');
+      return true
+    }
+  }
   
   $('#send_mail').on('click', function(event){
     event.preventDefault();
-    $.ajax({
-      contentType: 'application/json',
-      type: 'POST',
-      url: '/send_mail',
-      data: JSON.stringify({"hello": "there"}),
-      success: function(){
-        console.log('email sent');
-      },
-      error: function(){
-        console.log('ERROR');
-      }
-    });
+    if(validate_form()){
+      $.ajax({
+        contentType: 'application/json',
+        type: 'POST',
+        url: '/send_mail',
+        data: JSON.stringify({"email": email, "message": message, "name" : name}),
+        success: function(){
+          console.log('email sent');
+        },
+        error: function(){
+          console.log('ERROR');
+        }
+      });
+    }
   });
 
   $projects.each(function(index, elem){

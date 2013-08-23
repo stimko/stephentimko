@@ -36,17 +36,12 @@ body
     background $blue
     a
       color white
-
-// .section:not(#projects)
-//   min-width 1100px
   
 .section
   border-radius 4px
   margin-bottom 20px
   position relative
   background whitesmoke
-  //box-shadow -8px 5px 26px rgba(0, 0, 0, 0.21)
-  //background linear-gradient(left, rgba(255,255,255,0.1), rgba(255,255,255,0))
   .section-content
     padding 18px
 
@@ -62,12 +57,7 @@ body
   border-radius 0
   box-shadow -8px 5px 8px rgba(0,0,0,0.21)
   background $blue
-  //background linear-gradient(top, $blue 92%, rgba(36, 70, 94, 0) 100%)
-  //SAVING background linear-gradient(left, rgba(255,255,255,0.1), rgba(255,255,255,0))
   position fixed
-  // border-top-left-radius 5px
-  // border-left 7px solid rgba(255, 255, 255, 0.16)
-  // border-top 5px solid rgba(255,255,255,0.17)
   .position
     color white
     font-size 16px
@@ -133,13 +123,36 @@ ul
   font-size 16px
   label
     display block
+
+  .field
+    margin-bottom 5px
   input
   textarea
+    padding 5px
+    color $blue
     width 100%
     max-width 400px
     font-size inherit
     font-family inherit
+    &.invalid
+      border 1px solid red
+      &::after
+        content '\F06A'
+        font-family FontAwesome
+        font-size 16px
+        width 15px
 
+  textarea
+    height 100px
+  #send_mail
+    background $blue
+    color white
+    cursor pointer
+    border none
+    font-size 16px
+    font-family inherit
+    padding 7px 17px
+    border-radius 4px
 
 #projects
   padding 95px 150px 0 150px
@@ -257,7 +270,7 @@ a
   #menu
     top 63px
 
-@media all and (max-width: 920px)
+@media all and (max-width: 1085px)
   #projects
     #projects-list
       z-index 999 
