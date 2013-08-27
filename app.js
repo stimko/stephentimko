@@ -11,11 +11,13 @@ var express = require('express')
   , nib = require('nib')
   , path = require('path');
 
+var test = "hello";
+
 var app = express();
 
 //express middleware
 app.use(stylus.middleware({
-	src: __dirname + '\\public',
+	src: __dirname + '\\source',
 	dest: __dirname + '\\public',
 	force: true,
 	serve: true,

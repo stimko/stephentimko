@@ -1,4 +1,3 @@
-//- h2.section-header.Projects Projects
 h2.section-header.projects-header Projects
 #projects.section
 	ul#projects-list
@@ -10,7 +9,7 @@ h2.section-header.projects-header Projects
 						//label= project.description
 				.face.back
 					.inner
-						a.project-name(href= project.url)= project.name
+						a.project-name(href= project.url, target= "_blank")= project.name
 						i.icon-remove.close
 						.technology
 							each tech in project.technology
