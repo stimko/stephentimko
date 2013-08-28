@@ -40,22 +40,8 @@ $(function () {
           }
         }, 500);
         is_animating_out = false; 
-        assign_timer();
       });
     }); 
-  }
-
-  function assign_timer(){
-    clearTimeout(stack_timer);
-    if (is_animating_out){
-      return;
-    }
-    stack_timer = setTimeout(function(){
-      if (!hover_card){
-        initial_hover = true;
-        $projects.not($selected_card).transition({opacity:1}, 300);     
-      }
-    }, 750);
   }
 
   function remove_mouse_listeners($elem){
@@ -76,15 +62,25 @@ $(function () {
     });
 
     $elem.off('mouseenter').on('mouseenter', function(event){
+      event.stopImmediatePropagation();
       var $elem = $(event.currentTarget);
       hover_card = $elem;
       if (initial_hover){
         $projects.stop();
         initial_hover = false;
+        $('#projects').on('mouseover', function(){
+          initial_hover = true;
+          $projects.stop().not($selected_card).transition({opacity:1}, 300);
+          $('#projects').off('mouseover');
+        });
         $projects.not($elem).not($selected_card).css('opacity', .1);
       } else {
         $elem.stop(true, true).transition({opacity: 1}, 350);
       }
+    });
+
+    $elem.off('mouseover').on('mouseover', function(event){
+      event.stopImmediatePropagation()
     });
 
     $elem.off('mouseleave').on('mouseleave', function(event){
@@ -93,7 +89,6 @@ $(function () {
       clearTimeout(hover_timer);
       $elem.css('z-index', 0);
       $elem.transition({opacity: .1}, 350);
-      assign_timer();
     });
   }
 
@@ -110,7 +105,6 @@ $(function () {
       $('#projects').transition({paddingLeft:'555px'}, 500);
       hover_card = null;
       initial_hover = true;
-      assign_timer();  
       if ($selected_card){     
         animate_out_selected_card($selected_card, selected_card_degree);
         animate_in_selected_card($elem);
