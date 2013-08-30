@@ -1,15 +1,15 @@
 $(function () {
   var degree_offset = -45,
         $projects = $('#projects-list li'),
-        stack_timer,
-        hover_timer,
         initial_hover = true,
         phantom_hover = false,
         selected_card_degree = '',
         is_animating_in = false,
         is_animating_out = false,
         ghost_mouse_leave = true,
-        $selected_card = null;
+        $selected_card = null,
+        stack_timer,
+        hover_timer;
 
   function animate_in_selected_card ($card) {
     is_animating_in = true;
@@ -40,32 +40,40 @@ $(function () {
   }
 
   function remove_mouse_listeners($elem){
-    $elem.off('click');
-    $elem.off('mouseleave');
-    $elem.off('mousemove');
+    $elem.off('click mouseleave mousemove mouseenter');
+  }
+
+  function assign_timer(){
+    clearTimeout(stack_timer);
+    // if (is_animating_out){
+    //   return;
+    // }
+    stack_timer = setTimeout(function(){
+      if (initial_hover){
+        $projects.not($selected_card).transition({opacity:1}, 300);     
+      }
+    }, 750);
   }
 
   function check_initial_hover($elem){
     if (initial_hover){
         $projects.stop();
         initial_hover = false;
-        $('#projects').on('mouseover', function(){
+        $('#projects').on('mousemove', function(){
           initial_hover = true;
-          $projects.stop().not($selected_card).transition({opacity:1}, 300);
-          $('#projects').off('mouseover');
+          assign_timer();
+          $('#projects').off('mousemove');
         });
         $projects.not($elem).not($selected_card).transition({opacity: .1}, 350);
-      } else {
-        $elem.stop().transition({opacity: 1}, 350);
-      }
+      } 
+      $elem.stop().transition({opacity: 1}, 350);
   }
-
 
   function add_hover_listeners($elem){
 
     $elem.off('mousemove').on('mousemove', function(event){
+      event.stopImmediatePropagation();
       var $elem = $(event.currentTarget);
-      check_initial_hover($elem);
       clearTimeout(hover_timer);
       hover_timer = setTimeout(function(){
         $elem.css('z-index', 1);
@@ -73,8 +81,8 @@ $(function () {
       $elem.css('z-index', 0);           
     });
 
-    $elem.off('mouseover').on('mouseover', function(event){
-      event.stopImmediatePropagation()
+    $elem.off('mouseenter').on('mouseenter', function(event){
+      check_initial_hover($(event.currentTarget));
     });
 
     $elem.off('mouseleave').on('mouseleave', function(event){
@@ -92,14 +100,14 @@ $(function () {
       }
       var $elem = $(event.currentTarget);
       remove_mouse_listeners($elem);
-      $elem.stop().css('opacity', 1);
-      $projects.not($elem).not($selected_card).transition({opacity: 1}, 350);
-      $('#projects').transition({paddingLeft:'555px'}, 500);
+      $elem.css('opacity', 1);
+      //$projects.not($elem).not($selected_card).transition({opacity: 1}, 350);
       initial_hover = true;
       if ($selected_card){     
         animate_out_selected_card($selected_card, selected_card_degree);
         animate_in_selected_card($elem);
       } else {
+        $('#projects').transition({paddingLeft:'555px'}, 500);
         animate_in_selected_card($elem);
       }
     });
