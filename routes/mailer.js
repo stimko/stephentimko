@@ -2,8 +2,6 @@ var nodemailer = require("nodemailer");
 
 exports.send_mail = function(req, res){
 
-    console.log("helldddo");
-
     var smtpTransport = nodemailer.createTransport("SMTP",{
         service: "Gmail",
         auth: {

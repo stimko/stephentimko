@@ -64,7 +64,7 @@ $(function () {
           assign_timer();
           $('#projects').off('mousemove');
         });
-        $projects.not($elem).not($selected_card).transition({opacity: .1}, 350);
+        $projects.not($elem).not($selected_card).css('opacity', .1);
       } 
       $elem.stop().transition({opacity: 1}, 350);
   }
@@ -101,7 +101,6 @@ $(function () {
       var $elem = $(event.currentTarget);
       remove_mouse_listeners($elem);
       $elem.css('opacity', 1);
-      //$projects.not($elem).not($selected_card).transition({opacity: 1}, 350);
       initial_hover = true;
       if ($selected_card){     
         animate_out_selected_card($selected_card, selected_card_degree);
