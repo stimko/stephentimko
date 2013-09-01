@@ -3,4 +3,14 @@ head
   link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Didact Gothic:regular")
   link(rel='stylesheet', href='stylesheets/style.css')
   link(rel='stylesheet', href='stylesheets/vendor/font-awesome.min.css')
-  script!= hello
+
+  case environment
+    when 'development'
+      script(src="javascripts/vendor/jquery-min.js")
+      script(src="javascripts/vendor/jquery.transit.js")
+      script(src="javascripts/main.js")
+      script(src="javascripts/email.js")
+    when 'production'
+      script!= uglify
+
+

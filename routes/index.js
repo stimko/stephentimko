@@ -5,9 +5,10 @@ exports.list = function(req, res){
   Project.find({}, function(err, projects){
     if (err) return next(err);
       res.render('index', {
+      environment: process.env.NODE_ENV || 'development',
       title: 'My Projects',
       projects: projects,
-      hello: compress.final_code
+      uglify: compress.final_code
     });
   });
 };

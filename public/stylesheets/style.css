@@ -9,7 +9,7 @@ a{color:#224e6d;text-decoration:none;}
 a:hover{text-decoration:underline}
 #menu{z-index:1003;border-bottom-right-radius:10px;padding:11px;background:#e6e6e6;top:81px;border-right:1px solid #224e6d;border-bottom:3px solid #224e6d;position:fixed;-webkit-box-shadow:-8px 5px 26px rgba(0,0,0,0.21);box-shadow:-8px 5px 26px rgba(0,0,0,0.21);}
 #menu li{margin-bottom:10px;}
-#menu li a{color:#224e6d}
+#menu li a{text-decoration:none;color:#224e6d}
 #menu:hover{text-shadow:0 1px 10px #00b7ff;background:#224e6d;}
 #menu:hover a{color:#fff}
 .section{-webkit-border-radius:4px;border-radius:4px;margin-bottom:20px;position:relative;background:#f5f5f5;}

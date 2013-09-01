@@ -31,8 +31,8 @@ $(function () {
     new_selected = typeof new_selected !== 'undefined' ? new_selected : true;
     is_animating_out = true;
     $selected_card = null;
+    $card.css('z-index', 0);
     $card.transition({scale:old_scale, rotateY:'0deg', x:'0'}, 500, function(){
-      $card.css('z-index', 0);
       $card.transition({rotate:old_degrees}, 300, function(){
         if (!phantom_hover){ 
           add_mouse_listeners($card);
