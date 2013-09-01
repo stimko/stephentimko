@@ -2,13 +2,15 @@ var nodemailer = require("nodemailer");
 
 exports.send_mail = function(req, res){
 
-    var smtpTransport = nodemailer.createTransport("SMTP",{
-        service: "Gmail",
-        auth: {
-            user: "s.w.timko@gmail.com",
-            pass: ""
-        }
-    });
+    var transport = nodemailer.createTransport("sendmail");
+
+    // var smtpTransport = nodemailer.createTransport("SMTP",{
+    //     service: "Gmail",
+    //     auth: {
+    //         user: "s.w.timko@gmail.com",
+    //         pass: ""
+    //     }
+    // });
 
     // setup e-mail data with unicode symbols
     var mailOptions = {
@@ -18,7 +20,7 @@ exports.send_mail = function(req, res){
         text: req.body.name + "✔" + req.body.message
     }
      
-    smtpTransport.sendMail(mailOptions, function(error, response){
+    transport.sendMail(mailOptions, function(error, response){
         if(error){
             console.log('error');
         }else{
