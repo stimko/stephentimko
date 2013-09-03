@@ -16,6 +16,7 @@ $(function(){
 
     if(!value.match(regex)){
       $label.addClass('invalid');
+      $('.email-message').html('Please fix invalid fields.');
       return false
     } else {
       $label.removeClass('invalid');
@@ -32,10 +33,10 @@ $(function(){
         url: '/send_mail',
         data: JSON.stringify({"email": email, "message": message, "name" : name}),
         success: function(){
-          console.log('email sent');
+          $('.email-message').html('Email was successfully sent.');
         },
         error: function(){
-          console.log('ERROR');
+          $('.email-message').html('There was an error sending your mail.');
         }
       });
     }

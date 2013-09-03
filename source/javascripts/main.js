@@ -11,7 +11,6 @@ $(function () {
       $selected_card = null,
       hover_scale = 1,
       selected_scale = 1,
-      $hover_card,
       stack_timer,
       hover_timer;
 
@@ -120,28 +119,33 @@ $(function () {
     add_click_listeners($elem);
   }
 
-  $projects.each(function(index, elem){
-  	var $elem = $(elem);
-    $elem.transition({rotate: degree_offset + 'deg', scale: scale_offset});
-    degree_offset += 9;
-    scale_offset += .02;
-    add_mouse_listeners($elem);
-    $('.back .close', $elem).on('click', function(event){
-      if (is_animating_in || is_animating_out){
-        return;
-      }
-      event.stopImmediatePropagation();
-      $('#projects').transition({paddingLeft:'225px'}, 500);
-      var $card = $(event.currentTarget).closest('li');
-      phantom_hover = true;
-      $card.on('mouseleave.phantom', function(){
-        $card.off('mouseleave.phantom');
-        phantom_hover = false;
-        if(!is_animating_out){
-          add_mouse_listeners($card);
-        }    
-      });  
-      animate_out_selected_card($card, selected_card_degree, selected_scale, false)
+  function init(){
+    $('#menu li a, .social a').tipTip();
+    $projects.each(function(index, elem){
+      var $elem = $(elem);
+      $elem.transition({rotate: degree_offset + 'deg', scale: scale_offset});
+      degree_offset += 9;
+      scale_offset += .02;
+      add_mouse_listeners($elem);
+      $('.back .close', $elem).on('click', function(event){
+        if (is_animating_in || is_animating_out){
+          return;
+        }
+        event.stopImmediatePropagation();
+        $('#projects').transition({paddingLeft:'225px'}, 500);
+        var $card = $(event.currentTarget).closest('li');
+        phantom_hover = true;
+        $card.on('mouseleave.phantom', function(){
+          $card.off('mouseleave.phantom');
+          phantom_hover = false;
+          if(!is_animating_out){
+            add_mouse_listeners($card);
+          }    
+        });  
+        animate_out_selected_card($card, selected_card_degree, selected_scale, false)
+      });
     });
-  });
+  }
+
+  init();
 });

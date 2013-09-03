@@ -113,12 +113,13 @@ ul
 
 .social
   top 0
-  padding 4px 7px
+  padding 0px 6px
   position fixed
   border-radius 38px
-  font-size 1.5em
+  font-size 32px
   right 0
-  i
+  a
+    text-decoration none
     color white
     textglow()
     padding 5px
@@ -135,6 +136,7 @@ ul
     display block
     padding 2px
     &.invalid
+      color $red
       & + input
       & + textarea
         transition border .5s ease-out
@@ -275,8 +277,6 @@ ul
         height 100%
 
 @media all and (max-width: 1223px)
-  .social
-    padding 0
   .content 
     padding-top 77px 
   .header 
