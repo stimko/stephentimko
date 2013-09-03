@@ -24,7 +24,7 @@ $(function(){
     }
   }
   
-  $('#send_mail').on('click', function(event){
+  $('#send-mail').on('click', function(event){
     event.preventDefault();
     if(validate_form()){
       $.ajax({

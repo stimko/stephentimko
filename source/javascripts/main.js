@@ -66,7 +66,6 @@ $(function () {
         $projects.not($elem).not($selected_card).css('opacity', .1);
       }
       hover_scale = $elem.css("scale");
-      console.log(hover_scale);
       $elem.stop().transition({opacity: 1}, 350);
   }
 
@@ -119,8 +118,18 @@ $(function () {
     add_click_listeners($elem);
   }
 
-  function init(){
+  function configure_menu(){
     $('#menu li a, .social a').tipTip();
+    $('#menu li a').on('click', function(event){
+      $( this ).mouseout().mouseleave()
+      var section_name = $(this).attr('href').split('/')[1]
+      var current_offset = $('#' + section_name).offset().top;
+      $('body').scrollTo(current_offset - 96, 500);  
+    });
+  }
+
+  function init(){
+    configure_menu();
     $projects.each(function(index, elem){
       var $elem = $(elem);
       $elem.transition({rotate: degree_offset + 'deg', scale: scale_offset});
