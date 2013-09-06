@@ -1,6 +1,6 @@
 $(function () {
   var degree_offset = -45,
-      scale_offset = .9,
+      scale_offset = .95,
       $projects = $('#projects-list li'),
       initial_hover = true,
       phantom_hover = false,
@@ -11,6 +11,7 @@ $(function () {
       $selected_card = null,
       hover_scale = 1,
       selected_scale = 1,
+      scale_vanity = [],
       stack_timer,
       hover_timer;
 
@@ -65,8 +66,9 @@ $(function () {
         });
         $projects.not($elem).not($selected_card).css('opacity', .1);
       }
+      $elem.css('scale', scale_vanity[$('.project').index($elem)])
       hover_scale = $elem.css("scale");
-      $elem.stop().transition({opacity: 1}, 350);
+      $elem.stop().transition({opacity: 1, scale:1.05}, 350);
   }
 
   function add_hover_listeners($elem){
@@ -89,7 +91,7 @@ $(function () {
       var $elem = $(event.currentTarget);
       clearTimeout(hover_timer);
       $elem.css({'z-index':0});
-      $elem.transition({opacity: .1}, 350);
+      $elem.transition({opacity: .1, scale:hover_scale}, 350);
     });
   }
 
@@ -132,9 +134,10 @@ $(function () {
     configure_menu();
     $projects.each(function(index, elem){
       var $elem = $(elem);
+      scale_vanity.push(scale_offset);
       $elem.transition({rotate: degree_offset + 'deg', scale: scale_offset});
       degree_offset += 9;
-      scale_offset += .02;
+      scale_offset += .01;
       add_mouse_listeners($elem);
       $('.back .close', $elem).on('click', function(event){
         if (is_animating_in || is_animating_out){
