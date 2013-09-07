@@ -7,7 +7,7 @@ var express = require('express')
   , path = require('path');
 
 var app = express();
-var environment = process.env.NODE_ENV || 'development';
+var environment = process.env.NODE_ENV || 'production';
 
 app.use(stylus.middleware({
 	src: __dirname + '\\source',
@@ -33,11 +33,11 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
+app.use(express.static(path.join(__dirname, 'source')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 if ('development' == environment) {
   app.use(express.errorHandler());
-  app.use(express.static(path.join(__dirname, 'source')));
-  app.use(express.static(path.join(__dirname, 'public')));
 }
 
 app.get('/', index.list);
