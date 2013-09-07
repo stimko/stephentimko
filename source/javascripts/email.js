@@ -43,8 +43,8 @@ $(function(){
         type: 'POST',
         url: '/send_mail',
         data: JSON.stringify({"email": $('#email').val(), "message": $('#message').val(), "name" : $('#name').val()}),
-        success: function(){
-          $('.email-message').html('Email was successfully sent.');
+        success: function(value){
+          $('.email-message').html('Email was sent successfully.');
         },
         error: function(){
           $('.email-message').html('There was an error sending your mail.');

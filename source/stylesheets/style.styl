@@ -7,6 +7,7 @@ background-radial-gradient( alignment, type, color1, color2 )
 
 $blue = #224e6d
 $red = rgba(235, 28, 0, 1)
+$orange = #ff630b
 textglow()
    text-shadow 0px 1px 10px rgba(0,183,255,1)
   
@@ -24,7 +25,6 @@ a
     text-decoration underline
 
 #menu
-  z-index 1003
   border-bottom-right-radius 10px
   padding 11px
   background #E6E6E6
@@ -40,10 +40,9 @@ a
       color $blue
 
   &:hover
-    textglow()
     background $blue
     a
-      color white
+      color $orange
   
 .section
   border-radius 4px
@@ -124,6 +123,9 @@ ul
     textglow()
     padding 5px
     cursor pointer
+    &:hover
+      text-shadow none
+      color $orange
 
 #about
   font-size 20px
@@ -178,7 +180,7 @@ ul
     border-radius 4px
     float left
     &:hover
-      background #2A638B
+      color $orange
   .email-message
     float left
     padding-left 10px

@@ -2,29 +2,28 @@ var nodemailer = require("nodemailer");
 
 exports.send_mail = function(req, res){
 
-    var transport = nodemailer.createTransport("sendmail");
-
-    // var smtpTransport = nodemailer.createTransport("SMTP",{
-    //     service: "Gmail",
-    //     auth: {
-    //         user: "s.w.timko@gmail.com",
-    //         pass: ""
-    //     }
-    // });
+    var smtpTransport = nodemailer.createTransport("SMTP",{
+        service: "Gmail",
+        auth: {
+            user: "laggityman@gmail.com",
+            pass: "thisisadummyaccount"
+        }
+    });
 
     // setup e-mail data with unicode symbols
     var mailOptions = {
-        from: req.body.name +" ✔ " + "<"+ req.body.email +">",
+        from: req.body.email,
         to: "s.w.timko@gmail.com", 
         subject: "Email from st.com",
-        text: req.body.name + "✔" + req.body.message
+        text: 'Name:'+req.body.name + ' Message:' + req.body.message + ' Email:' + req.body.email
     }
      
-    transport.sendMail(mailOptions, function(error, response){
+    smtpTransport.sendMail(mailOptions, function(error, response){
         if(error){
             console.log('error');
         }else{
-            console.log("Message sent: " + response.message);
+          res.contentType('text/plain');
+          res.send('success');
         }
     });
 };
