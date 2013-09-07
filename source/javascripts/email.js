@@ -38,6 +38,7 @@ $(function(){
     event.preventDefault();
     if(validate_form()){
       $('.email-message').html('');
+      $('#send-mail').attr('disabled', 'disabled');
       $.ajax({
         contentType: 'application/json',
         type: 'POST',
