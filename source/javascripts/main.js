@@ -59,10 +59,10 @@ $(function () {
     if (initial_hover){
         $projects.stop();
         initial_hover = false;
-        $('#projects').on('mousemove', function(){
+        $('.content').on('mousemove', function(){
           initial_hover = true;
           assign_timer();
-          $('#projects').off('mousemove');
+          $('.content').off('mousemove');
         });
         $projects.not($elem).not($selected_card).css('opacity', .2);
       }
@@ -88,7 +88,7 @@ $(function () {
     });
 
     $elem.off('mousedown').on('mousedown', function(event){
-      $(this).css('scale', $(this).css('scale')-.05); 
+      $(this).css('scale', $(this).css('scale')-.01); 
     });
 
     $elem.off('mouseleave').on('mouseleave', function(event){
