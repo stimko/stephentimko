@@ -21,7 +21,7 @@ $(function () {
     selected_card_degree = $selected_card.css('rotate');
     $selected_card.css('z-index', 1);
     $selected_card.transition({rotate:0}, 300, function(){
-      $selected_card.transition({scale:1.3,rotateY:'-180deg', x:'155px'}, 500, function(){
+      $selected_card.transition({scale:1.2,rotateY:'-180deg', x:'170px'}, 500, function(){
         is_animating_in = false;
       }); 
     });
@@ -43,7 +43,7 @@ $(function () {
   }
 
   function remove_mouse_listeners($elem){
-    $elem.off('click mouseleave mousemove mouseenter');
+    $elem.off('mouseup mousedown mouseleave mousemove mouseenter');
   }
 
   function assign_timer(){
@@ -64,7 +64,7 @@ $(function () {
           assign_timer();
           $('#projects').off('mousemove');
         });
-        $projects.not($elem).not($selected_card).css('opacity', .1);
+        $projects.not($elem).not($selected_card).css('opacity', .2);
       }
       $elem.css('scale', scale_vanity[$('.project').index($elem)])
       hover_scale = $elem.css("scale");
@@ -75,7 +75,7 @@ $(function () {
 
     $elem.off('mousemove').on('mousemove', function(event){
       event.stopImmediatePropagation();
-      var $elem = $(event.currentTarget);
+      var $elem = $(this);
       clearTimeout(hover_timer);
       hover_timer = setTimeout(function(){
         $elem.css('z-index', 1);
@@ -84,25 +84,29 @@ $(function () {
     });
 
     $elem.off('mouseenter').on('mouseenter', function(event){
-      check_initial_hover($(event.currentTarget));
+      check_initial_hover($(this));
+    });
+
+    $elem.off('mousedown').on('mousedown', function(event){
+      $(this).css('scale', $(this).css('scale')-.05); 
     });
 
     $elem.off('mouseleave').on('mouseleave', function(event){
-      var $elem = $(event.currentTarget);
+      var $elem = $(this);
       clearTimeout(hover_timer);
       $elem.css({'z-index':0});
-      $elem.transition({opacity: .1, scale:hover_scale}, 350);
+      $elem.transition({opacity: .2, scale:hover_scale}, 350);
     });
   }
 
   function add_click_listeners($elem){
-    $elem.off('click').on('click', function(event){
+    $elem.off('mouseup').on('mouseup', function(event){
       if ((is_animating_in || is_animating_out) ||($selected_card !== null && $selected_card[0] === event.currentTarget)){
         return;
       }
       var $elem = $(event.currentTarget);
       remove_mouse_listeners($elem);
-      $elem.css('opacity', 1);
+      $elem.css({'opacity': 1});
       initial_hover = true;
       if ($selected_card){     
         animate_out_selected_card($selected_card, selected_card_degree, selected_scale);
