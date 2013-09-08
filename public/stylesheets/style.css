@@ -39,7 +39,7 @@ ul li{list-style-type:none}
 #contact #send-mail{background:#224e6d;color:#fff;cursor:pointer;border:none;font-size:16px;font-family:inherit;padding:7px 17px;-webkit-border-radius:4px;border-radius:4px;float:left;}
 #contact #send-mail:hover{color:#ff630b}
 #contact .email-message{float:left;padding-left:10px}
-#projects{padding:95px 150px 0 150px;height:400px;}
+#projects{padding:75px 150px 50px 150px;height:400px;}
 #projects.expanded{padding-left:600px;padding-right:600px}
 #projects #projects-list{position:relative;z-index:1001;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600;width:185px;margin:0 auto;}
 #projects #projects-list li{position:absolute;-webkit-transform-origin:0 275px;-moz-transform-origin:0 275px;-o-transform-origin:0 275px;-ms-transform-origin:0 275px;transform-origin:0 275px;font-size:24px;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d;}

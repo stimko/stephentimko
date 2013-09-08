@@ -1,6 +1,6 @@
 $(function () {
   var degree_offset = -45,
-      scale_offset = .95,
+      scale_offset = .9,
       $projects = $('#projects-list li'),
       initial_hover = true,
       phantom_hover = false,
@@ -68,7 +68,7 @@ $(function () {
       }
       $elem.css('scale', scale_vanity[$('.project').index($elem)])
       hover_scale = $elem.css("scale");
-      $elem.stop().transition({opacity: 1, scale:1.05}, 350);
+      $elem.stop().transition({opacity: 1, scale:$elem.css('scale')+.05}, 350);
   }
 
   function add_hover_listeners($elem){
@@ -141,7 +141,7 @@ $(function () {
       scale_vanity.push(scale_offset);
       $elem.transition({rotate: degree_offset + 'deg', scale: scale_offset});
       degree_offset += 9;
-      scale_offset += .01;
+      scale_offset += .02;
       add_mouse_listeners($elem);
       $('.back .close', $elem).on('click', function(event){
         if (is_animating_in || is_animating_out){
