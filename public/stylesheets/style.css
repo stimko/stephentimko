@@ -4,7 +4,7 @@ ol,ul{list-style:none}
 table{border-collapse:separate;border-spacing:0;vertical-align:middle}
 caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}
 a img{border:none}
-html,body{height:100%;color:#224e6d;font:18px 'Segoe UI',serif;background:#fff}
+html,body{height:100%;color:#224e6d;font:18px 'Didact Gothic',serif;background:#fff}
 a{color:#224e6d;text-decoration:none;}
 a:hover{text-decoration:underline}
 #menu{border-bottom-right-radius:10px;padding:11px;background:#e6e6e6;top:81px;border-right:1px solid #224e6d;border-bottom:3px solid #224e6d;position:fixed;-webkit-box-shadow:-8px 5px 26px rgba(0,0,0,0.21);box-shadow:-8px 5px 26px rgba(0,0,0,0.21);}
