@@ -11,7 +11,7 @@ a:hover{text-decoration:underline}
 #menu li{margin-bottom:10px;}
 #menu li a{text-decoration:none;color:#224e6d}
 #menu:hover{background:#224e6d;}
-#menu:hover a{color:#eb0c41}
+#menu:hover a{color:#13aa6e}
 .section{-webkit-border-radius:4px;border-radius:4px;margin-bottom:20px;position:relative;background:#f5f5f5;}
 .section .section-content{padding:18px}
 .content{padding:96px 63px 10px 63px;min-width:676px}
@@ -24,7 +24,7 @@ ul li{list-style-type:none}
 .section-header.projects-header{z-index:3;float:left}
 .social{top:0;padding:0 6px;position:fixed;-webkit-border-radius:38px;border-radius:38px;font-size:32px;right:0;}
 .social a{text-decoration:none;color:#fff;text-shadow:0 1px 10px #00b7ff;padding:5px;cursor:pointer;}
-.social a:hover{text-shadow:none;color:#eb0c41}
+.social a:hover{text-shadow:none;color:#13aa6e}
 #about{font-size:20px;}
 #about a{font-weight:bold}
 #contact{font-size:16px;}
@@ -37,7 +37,7 @@ ul li{list-style-type:none}
 #contact input,#contact textarea{-webkit-border-radius:2px;border-radius:2px;border:1px solid #224e6d;padding:5px;color:#224e6d;width:100%;max-width:400px;font-size:inherit;font-family:inherit}
 #contact textarea{height:100px}
 #contact #send-mail{background:#224e6d;color:#fff;cursor:pointer;border:none;font-size:16px;font-family:inherit;padding:7px 17px;-webkit-border-radius:4px;border-radius:4px;float:left;}
-#contact #send-mail:hover{color:#eb0c41}
+#contact #send-mail:hover{color:#13aa6e}
 #contact .email-message{float:left;padding-left:10px}
 #projects{padding:75px 150px 50px 150px;height:400px;}
 #projects.expanded{padding-left:600px;padding-right:600px}
