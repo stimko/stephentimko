@@ -57,7 +57,9 @@ $(function () {
 
   function check_initial_hover($elem){
     if (initial_hover){
+      if(!is_animating_out){
         $projects.stop();
+      }
         initial_hover = false;
         $('.content').on('mousemove', function(){
           initial_hover = true;
@@ -68,7 +70,10 @@ $(function () {
       }
       $elem.css('scale', scale_vanity[$('.project').index($elem)])
       hover_scale = $elem.css("scale");
-      $elem.stop().transition({opacity: 1, scale:$elem.css('scale')+.05}, 350);
+      if(!is_animating_out){
+        $elem.stop()
+      }
+      $elem.transition({opacity: 1, scale:$elem.css('scale')+.05}, 350);
   }
 
   function add_hover_listeners($elem){
