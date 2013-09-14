@@ -23,6 +23,7 @@ $(function () {
     $selected_card.transition({rotate:0}, 300, function(){
       $selected_card.transition({scale:1.2,rotateY:'-180deg', x:'170px'}, 500, function(){
         is_animating_in = false;
+        assign_timer();
       }); 
     });
   }
@@ -60,20 +61,22 @@ $(function () {
       if(!is_animating_out){
         $projects.stop();
       }
-        initial_hover = false;
-        $('.content').on('mousemove', function(){
-          initial_hover = true;
+      initial_hover = false;
+      $('.content').on('mousemove', function(){
+        initial_hover = true;
+        if(!is_animating_in){
           assign_timer();
-          $('.content').off('mousemove');
-        });
-        $projects.not($elem).not($selected_card).css('opacity', .2);
-      }
-      $elem.css('scale', scale_vanity[$('.project').index($elem)])
-      hover_scale = $elem.css("scale");
-      if(!is_animating_out){
-        $elem.stop()
-      }
-      $elem.transition({opacity: 1, scale:$elem.css('scale')+.05}, 350);
+        }
+        $('.content').off('mousemove');
+      });
+      $projects.not($elem).not($selected_card).css('opacity', .2);
+    }
+    $elem.css('scale', scale_vanity[$('.project').index($elem)])
+    hover_scale = $elem.css("scale");
+    if(!is_animating_out){
+      $elem.stop()
+    }
+    $elem.transition({opacity: 1, scale:$elem.css('scale')+.05}, 350);
   }
 
   function add_hover_listeners($elem){
@@ -89,10 +92,12 @@ $(function () {
     });
 
     $elem.off('mouseenter').on('mouseenter', function(event){
+      console.log('mouseenter');
       check_initial_hover($(this));
     });
 
     $elem.off('mousedown').on('mousedown', function(event){
+      event.stopImmediatePropagation();
       $(this).css('scale', $(this).css('scale')-.01); 
     });
 
@@ -109,6 +114,7 @@ $(function () {
       if ((is_animating_in || is_animating_out) ||($selected_card !== null && $selected_card[0] === event.currentTarget)){
         return;
       }
+      event.stopImmediatePropagation();
       var $elem = $(event.currentTarget);
       remove_mouse_listeners($elem);
       $elem.css({'opacity': 1});
@@ -167,6 +173,5 @@ $(function () {
       });
     });
   }
-
   init();
 });
