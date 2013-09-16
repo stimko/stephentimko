@@ -92,7 +92,6 @@ $(function () {
     });
 
     $elem.off('mouseenter').on('mouseenter', function(event){
-      console.log('mouseenter');
       check_initial_hover($(this));
     });
 
