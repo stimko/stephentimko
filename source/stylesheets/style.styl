@@ -142,8 +142,8 @@ ul
       color $red
       & + input
       & + textarea
-        transition border .5s ease-out
-        border 1px solid $red
+        transition background .5s ease-out
+        background $red
       &::after
         opacity 1 
     &::after
@@ -180,6 +180,19 @@ ul
     padding 7px 17px
     border-radius 4px
     float left
+    span
+      color $hover_color 
+      display none
+    &[disabled]
+      cursor auto
+      span
+        margin-left 10px
+        display inline-block
+        animation spin .5s infinite
+
+      &:hover
+        color white
+
     &:hover
       color $hover_color
   .email-message

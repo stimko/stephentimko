@@ -33,6 +33,10 @@ $(function(){
       return true
     }
   }
+
+  function reset_send_mail_button(){
+    $('#send-mail').removeAttr("disabled");
+  }
   
   $('#send-mail').on('click', function(event){
     event.preventDefault();
@@ -45,9 +49,11 @@ $(function(){
         url: '/send_mail',
         data: JSON.stringify({"email": $('#email').val(), "message": $('#message').val(), "name" : $('#name').val()}),
         success: function(value){
+          reset_send_mail_button()
           $('.email-message').html('Email was sent successfully.');
         },
         error: function(){
+          reset_send_mail_button()
           $('.email-message').html('There was an error sending your mail.');
         }
       });

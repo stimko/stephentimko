@@ -30,13 +30,17 @@ ul li{list-style-type:none}
 #contact{font-size:16px;}
 #contact label{display:block;padding:2px;}
 #contact label.invalid{color:#eb1c00;}
-#contact label.invalid + input,#contact label.invalid + textarea{-webkit-transition:border .5s ease-out;-moz-transition:border .5s ease-out;-o-transition:border .5s ease-out;-ms-transition:border .5s ease-out;transition:border .5s ease-out;border:1px solid #eb1c00}
+#contact label.invalid + input,#contact label.invalid + textarea{-webkit-transition:background .5s ease-out;-moz-transition:background .5s ease-out;-o-transition:background .5s ease-out;-ms-transition:background .5s ease-out;transition:background .5s ease-out;background:#eb1c00}
 #contact label.invalid::after{opacity:1;-ms-filter:none;filter:none}
 #contact label::after{-webkit-transition:opacity .5s ease-out;-moz-transition:opacity .5s ease-out;-o-transition:opacity .5s ease-out;-ms-transition:opacity .5s ease-out;transition:opacity .5s ease-out;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";color:#eb1c00;margin-left:5px;content:'\F088 ';font-family:FontAwesome;font-size:16px;width:15px}
 #contact .field{margin-bottom:5px}
 #contact input,#contact textarea{-webkit-border-radius:2px;border-radius:2px;border:1px solid #224e6d;padding:5px;color:#224e6d;width:100%;max-width:400px;font-size:inherit;font-family:inherit}
 #contact textarea{height:100px}
 #contact #send-mail{background:#224e6d;color:#fff;cursor:pointer;border:none;font-size:16px;font-family:inherit;padding:7px 17px;-webkit-border-radius:4px;border-radius:4px;float:left;}
+#contact #send-mail span{color:#11c47d;display:none}
+#contact #send-mail[disabled]{cursor:auto;}
+#contact #send-mail[disabled] span{margin-left:10px;display:inline-block;-webkit-animation:spin .5s infinite;-moz-animation:spin .5s infinite;-o-animation:spin .5s infinite;-ms-animation:spin .5s infinite;animation:spin .5s infinite}
+#contact #send-mail[disabled]:hover{color:#fff}
 #contact #send-mail:hover{color:#11c47d}
 #contact .email-message{float:left;padding-left:10px}
 #projects{padding:75px 150px 50px 150px;height:400px;}
