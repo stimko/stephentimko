@@ -58,9 +58,6 @@ $(function () {
 
   function check_initial_hover($elem){
     if (initial_hover){
-      if(!is_animating_out){
-        $projects.stop();
-      }
       initial_hover = false;
       $('.content').on('mousemove', function(){
         initial_hover = true;
