@@ -58,6 +58,9 @@ $(function () {
 
   function check_initial_hover($elem){
     if (initial_hover){
+      if(!is_animating_out){
+        $projects.stop();
+      }
       initial_hover = false;
       $('.content').on('mousemove', function(){
         initial_hover = true;
@@ -71,14 +74,14 @@ $(function () {
     $elem.css('scale', scale_vanity[$('.project').index($elem)])
     hover_scale = $elem.css("scale");
     if(!is_animating_out){
-      $elem.stop()
+      $elem.stop();
     }
     $elem.transition({opacity: 1, scale:$elem.css('scale')+.05}, 350);
   }
 
   function add_hover_listeners($elem){
 
-    $elem.off('mousemove').on('mousemove', function(event){
+    $elem.on('mousemove', function(event){
       event.stopImmediatePropagation();
       var $elem = $(this);
       clearTimeout(hover_timer);
@@ -88,16 +91,16 @@ $(function () {
       $elem.css('z-index', 0);           
     });
 
-    $elem.off('mouseenter').on('mouseenter', function(event){
+    $elem.on('mouseenter', function(event){
       check_initial_hover($(this));
     });
 
-    $elem.off('mousedown').on('mousedown', function(event){
+    $elem.on('mousedown', function(event){
       event.stopImmediatePropagation();
       $(this).css('scale', $(this).css('scale')-.01); 
     });
 
-    $elem.off('mouseleave').on('mouseleave', function(event){
+    $elem.on('mouseleave', function(event){
       var $elem = $(this);
       clearTimeout(hover_timer);
       $elem.css({'z-index':0});
@@ -106,10 +109,7 @@ $(function () {
   }
 
   function add_click_listeners($elem){
-    $elem.off('mouseup').on('mouseup', function(event){
-      if ((is_animating_in || is_animating_out) ||($selected_card !== null && $selected_card[0] === event.currentTarget)){
-        return;
-      }
+    $elem.on('mouseup', function(event){
       event.stopImmediatePropagation();
       var $elem = $(event.currentTarget);
       remove_mouse_listeners($elem);
