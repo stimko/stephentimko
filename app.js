@@ -17,8 +17,6 @@ app.use(stylus.middleware({
 	compile: compile
 }));
 
-app.use(express.favicon(__dirname + '\\public\\images/\\favicon.ico'));
-
 function compile(str, path) {
    return stylus(str)
      .set('filename', path)
@@ -30,8 +28,7 @@ function compile(str, path) {
 app.set('port', process.env.PORT || 4000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.logger('dev'));
+app.use(express.favicon(__dirname + '\\public\\images/\\favicon.ico'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
@@ -39,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 if ('development' == environment) {
   app.use(express.errorHandler());
+  app.use(express.logger('dev'));
   app.use(express.static(path.join(__dirname, 'source')));
 }
 
