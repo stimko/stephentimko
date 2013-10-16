@@ -17,6 +17,8 @@ app.use(stylus.middleware({
 	compile: compile
 }));
 
+app.use(express.favicon(__dirname + '\\public\\images/\\favicon.ico'));
+
 function compile(str, path) {
    return stylus(str)
      .set('filename', path)
