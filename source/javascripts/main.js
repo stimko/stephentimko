@@ -1,4 +1,4 @@
-$(function () {
+$(function(){
   var degree_offset = -45,
       scale_offset = .9,
       $projects = $('#projects-list li'),
@@ -16,7 +16,7 @@ $(function () {
       stack_timer,
       hover_timer;
 
-  function animate_in_selected_card ($card) {
+  function animate_in_selected_card($card){
     is_animating_in = true;
     $selected_card = $card;
     selected_card_degree = $selected_card.css('rotate');
