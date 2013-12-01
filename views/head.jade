@@ -4,19 +4,5 @@ head
   link(rel='stylesheet', href='stylesheets/style.css')
   link(rel='stylesheet', href='stylesheets/vendor/font-awesome.min.css')
   link(rel='stylesheet', href='stylesheets/vendor/tipTip.css')
-  //[if IE]
-   script(src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
-  //[endif]
-
-  case environment
-    when 'development'
-      script(src="javascripts/vendor/jquery-min.js")
-      script(src="javascripts/vendor/jquery.transit.js")
-      script(src="javascripts/vendor/jquery.tipTip.js")
-      script(src="javascripts/vendor/jquery.scrollTo.js")
-      script(src="javascripts/main.js")
-      script(src="javascripts/email.js")
-    when 'production'
-      script(src="javascripts/output.min.js")
 
 
