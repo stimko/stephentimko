@@ -135,7 +135,7 @@ $(function(){
   }
 
   function configure_menu(){
-    $('#menu li a, .social a').tipTip({delay:0});
+    $('#menu li a, .social a').tipTip({delay:200});
     $('#menu li a').on('click', function(event){
       $( this ).mouseout().mouseleave()
       var section_name = $(this).attr('href').split('/')[1]
