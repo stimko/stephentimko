@@ -15,7 +15,7 @@ a:hover{text-decoration:underline}
 .section{-webkit-border-radius:4px;border-radius:4px;margin-bottom:20px;position:relative;background:#f5f5f5;}
 .section .section-content{padding:18px}
 .content{padding:96px 63px 10px 63px;min-width:676px}
-.header{text-shadow:0 1px 10px #00b7ff;z-index:1000;width:100%;padding:0 40px 12px 10px;-webkit-border-radius:0;border-radius:0;-webkit-box-shadow:-8px 5px 8px rgba(0,0,0,0.21);box-shadow:-8px 5px 8px rgba(0,0,0,0.21);background:#224e6d;position:fixed;}
+.header{text-shadow:0 1px 3px #00b7ff;z-index:1000;width:100%;padding:0 40px 12px 10px;-webkit-border-radius:0;border-radius:0;-webkit-box-shadow:-8px 5px 8px rgba(0,0,0,0.21);box-shadow:-8px 5px 8px rgba(0,0,0,0.21);background:#224e6d;position:fixed;}
 .header .position{color:#fff;font-size:16px}
 h1.me{font-weight:bold;color:#fff;font-size:36px;display:inline-block}
 ul li{list-style-type:none}
@@ -23,7 +23,7 @@ ul li{list-style-type:none}
 .section-header::before{content:'';display:block;position:absolute;left:-1px;bottom:-10px;border:solid 4px transparent;border-right-color:#224e6d;border-top-color:#224e6d;width:0;height:0;z-index:0}
 .section-header.projects-header{z-index:3;float:left}
 .social{top:0;padding:0 6px;position:fixed;-webkit-border-radius:38px;border-radius:38px;font-size:32px;right:0;}
-.social a{text-decoration:none;color:#fff;text-shadow:0 1px 10px #00b7ff;padding:5px;cursor:pointer;}
+.social a{text-decoration:none;color:#fff;text-shadow:0 1px 3px #00b7ff;padding:5px;cursor:pointer;}
 .social a:hover{text-shadow:none;color:#11c47d}
 #about{font-size:20px;}
 #about a{font-weight:bold}
