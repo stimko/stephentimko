@@ -1,6 +1,6 @@
 $(function(){
   var degree_offset = -45,
-      scale_offset = .9,
+      scale_offset = 0.9,
       $projects = $('#projects-list li'),
       initial_hover = true,
       phantom_hover = false,
@@ -39,7 +39,7 @@ $(function(){
       $card.transition({rotate:old_degrees}, 300, function(){
         if (!phantom_hover){ 
           add_mouse_listeners($card);
-        };
+        }
         $animating_out_card = null;
         is_animating_out = false; 
       });
@@ -72,25 +72,24 @@ $(function(){
         }
         $('.content').off('mousemove');
       });
-      $projects.not($elem).not($selected_card).css('opacity', .2);
+      $projects.not($elem).not($selected_card).css('opacity', 0.2);
     }
-    $elem.css('scale', scale_vanity[$('.project').index($elem)])
+    $elem.css('scale', scale_vanity[$('.project').index($elem)]);
     hover_scale = $elem.css("scale");
     if(!is_animating_out){
       $elem.stop();
     }
-    $elem.transition({opacity: 1, scale:$elem.css('scale')+.05}, 350);
+    $elem.transition({opacity: 1, scale:$elem.css('scale')+0.05}, 350);
   }
 
   function add_hover_listeners($elem){
-
     $elem.on('mousemove', function(event){
       event.stopImmediatePropagation();
       var $elem = $(this);
       clearTimeout(hover_timer);
       hover_timer = setTimeout(function(){
         $elem.css('z-index', 1);
-      }, 300)
+      }, 300);
       $elem.css('z-index', 0);           
     });
 
@@ -100,14 +99,14 @@ $(function(){
 
     $elem.on('mousedown', function(event){
       event.stopImmediatePropagation();
-      $(this).css('scale', $(this).css('scale')-.01); 
+      $(this).css('scale', $(this).css('scale')-0.01); 
     });
 
     $elem.on('mouseleave', function(event){
       var $elem = $(this);
       clearTimeout(hover_timer);
       $elem.css({'z-index':0});
-      $elem.transition({opacity: .2, scale:hover_scale}, 350);
+      $elem.transition({opacity: 0.2, scale:hover_scale}, 350);
     });
   }
 
@@ -137,8 +136,8 @@ $(function(){
   function configure_menu(){
     $('#menu li a, .social a').tipTip({delay:100});
     $('#menu li a').on('click', function(event){
-      $( this ).mouseout().mouseleave()
-      var section_name = $(this).attr('href').split('/')[1]
+      $( this ).mouseout().mouseleave();
+      var section_name = $(this).attr('href').split('/')[1];
       var current_offset = $('#' + section_name).offset().top;
       $('body').scrollTo(current_offset - 96, 500);  
     });
@@ -151,7 +150,7 @@ $(function(){
       scale_vanity.push(scale_offset);
       $elem.transition({rotate: degree_offset + 'deg', scale: scale_offset});
       degree_offset += 9;
-      scale_offset += .02;
+      scale_offset += 0.02;
       add_mouse_listeners($elem);
       $('.back .close', $elem).on('click', function(event){
         if (is_animating_in || is_animating_out){
@@ -168,7 +167,7 @@ $(function(){
             add_mouse_listeners($card);
           }    
         });  
-        animate_out_selected_card($card, selected_card_degree, selected_scale, false)
+        animate_out_selected_card($card, selected_card_degree, selected_scale, false);
       });
     });
   }
