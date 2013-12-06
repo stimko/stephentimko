@@ -1,15 +1,15 @@
 $(function(){
-  var degree_offset = -45,
+  var $projects = $('#projects-list li'),
+      $selected_card = null,
+      $animating_out_card = null,
+      degree_offset = -45,
       scale_offset = 0.9,
-      $projects = $('#projects-list li'),
       initial_hover = true,
       phantom_hover = false,
       selected_card_degree = '',
       is_animating_in = false,
       is_animating_out = false,
       ghost_mouse_leave = true,
-      $selected_card = null,
-      $animating_out_card = null,
       hover_scale = 1,
       selected_scale = 1,
       scale_vanity = [],
@@ -99,7 +99,7 @@ $(function(){
 
     $elem.on('mousedown', function(event){
       event.stopImmediatePropagation();
-      $(this).css('scale', $(this).css('scale')-0.01); 
+      $(this).css('scale', $(this).css('scale') - 0.01); 
     });
 
     $elem.on('mouseleave', function(event){
@@ -152,6 +152,7 @@ $(function(){
       degree_offset += 9;
       scale_offset += 0.02;
       add_mouse_listeners($elem);
+      
       $('.back .close', $elem).on('click', function(event){
         if (is_animating_in || is_animating_out){
           return;
