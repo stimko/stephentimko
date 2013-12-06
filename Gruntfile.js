@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         files: {
           'public/javascripts/output.min.js': ["source/javascripts/vendor/jquery-min.js",
             "source/javascripts/vendor/jquery.transit.js",
-            "source/javascripts/main.js", 
+            "source/javascripts/projects.js", 
             "source/javascripts/email.js",
             "source/javascripts/vendor/jquery.tipTip.js",
             "source/javascripts/vendor/jquery.scrollTo.js"
