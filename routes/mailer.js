@@ -10,7 +10,6 @@ exports.send_mail = function(req, res){
         }
     });
 
-    // setup e-mail data with unicode symbols
     var mailOptions = {
         from: req.body.email,
         to: "s.w.timko@gmail.com", 

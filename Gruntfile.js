@@ -9,7 +9,6 @@ module.exports = function(grunt) {
             "source/javascripts/vendor/jquery.transit.js",
             "source/javascripts/projects.js", 
             "source/javascripts/email.js",
-            "source/javascripts/vendor/jquery.tipTip.js",
             "source/javascripts/vendor/jquery.scrollTo.js"
           ]
         }
