@@ -1,3 +1,5 @@
+require('newrelic');
+
 var express = require('express')
   , index = require('./routes/index')
   , mailer = require('./routes/mailer')
