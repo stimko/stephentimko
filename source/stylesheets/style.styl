@@ -23,7 +23,7 @@ a
   border-bottom-right-radius 10px
   padding 11px
   background #E6E6E6
-  top 81px
+  top 72px
   border-right 1px solid $blue
   border-bottom 3px solid $blue  
   position fixed
@@ -55,19 +55,28 @@ a
   textglow()
   z-index 1000
   width 100%
-  padding 0 40px 12px 10px
   border-radius 0
+  padding-bottom 4px
   box-shadow -8px 5px 8px rgba(0,0,0,0.21)
   background $blue
   position fixed
   .position
     color white
     font-size 16px
+  .logo
+    margin 7px
+    width 34px
+    padding 7px
+    border-radius 7px
+    border 3px solid rgba(26, 60, 83, 0.92) 
+    float left
+    box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.29)
 
 h1.me
+  padding-top 1px
   font-weight bold
   color white
-  font-size 36px
+  font-size 30px
   display inline-block
 
 ul
@@ -294,16 +303,17 @@ ul
 
 @media all and (max-width: 1223px)
   .content 
-    padding-top 77px 
+    padding-top 88px 
   .header 
     padding 6px 
     .me
+      padding-top 5px
       font-weight bold
       font-size 26px
     .position 
       font-size 14px
   #menu
-    top 63px
+    top 77px
 
 @media all and (max-width: 1085px)
   #projects
