@@ -23,6 +23,7 @@ a
   border-bottom-right-radius 10px
   padding 11px
   background #E6E6E6
+  transition background .5s ease-out
   top 72px
   border-right 1px solid $blue
   border-bottom 3px solid $blue  
@@ -134,6 +135,7 @@ ul
     textglow()
     padding 5px
     cursor pointer
+    transition color .5s ease-out
     &:hover
       text-shadow none
       color $hover_color
@@ -183,6 +185,7 @@ ul
   #send-mail
     background $blue
     color white
+    transition color .5s ease-out
     cursor pointer
     border none
     font-size 16px
@@ -199,10 +202,8 @@ ul
         margin-left 10px
         display inline-block
         animation spin .5s infinite linear
-
       &:hover
         color white
-
     &:hover
       color $hover_color
   .email-message
