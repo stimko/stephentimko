@@ -15,7 +15,7 @@ $(function(){
     $selectedCard,
     $retractingCard;
 
-  function animate_in_selected_card($card){
+  function flipCard($card){
     isAnimatingIn = true;
     $selectedCard = $card;
     selectedCardDegrees = $selectedCard.css('rotate');
@@ -23,21 +23,21 @@ $(function(){
     $selectedCard.transition({rotate:0}, 300, function(){
       $selectedCard.transition({scale:1.2,rotateY:'-180deg', x:'170px'}, 500, function(){
         isAnimatingIn = false;
-        assign_timer();
+        assignTimer();
       }); 
     });
   }
 
-  function animate_out_selected_card($card, old_degrees, old_scale, new_selected){
-    new_selected = typeof new_selected !== 'undefined' ? new_selected : true;
+  function retractSelectedCard($card, oldDegrees, oldScale, newSelected){
+    newSelected = typeof newSelected !== 'undefined' ? newSelected : true;
     isAnimatingOut = true;
     $selectedCard = null;
     $retractingCard = $card;
     $card.css('z-index', 0);
-    $card.transition({scale:old_scale, rotateY:'0deg', x:'0'}, 500, function(){
-      $card.transition({rotate:old_degrees}, 300, function(){
+    $card.transition({scale:oldScale, rotateY:'0deg', x:'0'}, 500, function(){
+      $card.transition({rotate:oldDegrees}, 300, function(){
         if (!phantomHover){ 
-          add_mouse_listeners($card);
+          addMouseListeners($card);
         }
         $retractingCard = null;
         isAnimatingOut = false; 
@@ -45,11 +45,11 @@ $(function(){
     }); 
   }
 
-  function remove_mouse_listeners($elem){
+  function removeMouseListeners($elem){
     $elem.off('mouseup mousedown mouseleave mousemove mouseenter');
   }
 
-  function assign_timer(){
+  function assignTimer(){
     clearTimeout(stackTimer);
     stackTimer = setTimeout(function(){
       if (initialHover){
@@ -58,7 +58,7 @@ $(function(){
     }, 750);
   }
 
-  function check_initialHover($elem){
+  function checkIntialHover($elem){
     if (initialHover){
       if(!isAnimatingOut){
         $projects.stop();
@@ -67,7 +67,7 @@ $(function(){
       $('.content').on('mousemove', function(){
         initialHover = true;
         if(!isAnimatingIn){
-          assign_timer();
+          assignTimer();
         }
         $('.content').off('mousemove');
       });
@@ -81,7 +81,7 @@ $(function(){
     $elem.transition({opacity: 1, scale:$elem.css('scale')+0.05}, 350);
   }
 
-  function add_hover_listeners($elem){
+  function addHoverListeners($elem){
     $elem.on('mousemove', function(event){
       event.stopImmediatePropagation();
       var $elem = $(this);
@@ -93,7 +93,7 @@ $(function(){
     });
 
     $elem.on('mouseenter', function(event){
-      check_initialHover($(this));
+      checkIntialHover($(this));
     });
 
     $elem.on('mousedown', function(event){
@@ -109,47 +109,46 @@ $(function(){
     });
   }
 
-  function add_click_listeners($elem){
+  function addClickListeners($elem){
     $elem.on('mouseup', function(event){
       event.stopImmediatePropagation();
       var $elem = $(event.currentTarget);
-      remove_mouse_listeners($elem);
+      removeMouseListeners($elem);
       $elem.css({'opacity': 1});
       initialHover = true;
       if ($selectedCard){     
-        animate_out_selected_card($selectedCard, selectedCardDegrees, selectedScale);
-        animate_in_selected_card($elem);
+        retractSelectedCard($selectedCard, selectedCardDegrees, selectedScale);
+        flipCard($elem);
       } else {
         $('#projects').transition({paddingLeft:'555px'}, 500);
-        animate_in_selected_card($elem);
+        flipCard($elem);
       }
       selectedScale = hoverScale;
     });
   }
 
-  function add_mouse_listeners($elem){
-    add_hover_listeners($elem);
-    add_click_listeners($elem);
+  function addMouseListeners($elem){
+    addHoverListeners($elem);
+    addClickListeners($elem);
   }
 
-  function configure_menu(){
+  function configureMenu(){
     $('#menu li a').on('click', function(event){
       $( this ).mouseout().mouseleave();
-      var section_name = $(this).attr('href').split('/')[1],
-        current_offset = $('#' + section_name).offset().top;
-      $('body').scrollTo(current_offset - 96, 500);  
+      var sectionName = $(this).attr('href').split('/')[1],
+        currentOffset = $('#' + sectionName).offset().top;
+      $('body').scrollTo(currentOffset - 96, 500);  
     });
   }
 
-  function init(){
-    configure_menu();
+  function configureProjects(){
     $projects.each(function(index, elem){
       var $elem = $(elem);
       scaleVanity.push(scaleOffset);
       $elem.transition({rotate: degreeOffset + 'deg', scale: scaleOffset});
       degreeOffset += 9;
       scaleOffset += 0.02;
-      add_mouse_listeners($elem);
+      addMouseListeners($elem);
       
       $('.back .close', $elem).on('click', function(event){
         if (isAnimatingIn || isAnimatingOut){
@@ -163,12 +162,18 @@ $(function(){
           $card.off('mouseleave.phantom');
           phantomHover = false;
           if(!isAnimatingOut){
-            add_mouse_listeners($card);
+            addMouseListeners($card);
           }    
         });  
-        animate_out_selected_card($card, selectedCardDegrees, selectedScale, false);
+        retractSelectedCard($card, selectedCardDegrees, selectedScale, false);
       });
     });
   }
+
+  function init(){
+    configureMenu();
+    configureProjects();
+  }
+   
   init();
 });
