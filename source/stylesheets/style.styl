@@ -3,8 +3,10 @@ global-reset()
 $blue = #224e6d
 $red = rgba(235, 28, 0, 1)
 $hoverColor = #11C47D
+borderRadius()
+  border-radius 4px
 textglow()
-   text-shadow 0px 1px 3px rgba(0,183,255,1)
+  text-shadow 0px 1px 3px rgba(0,183,255,1)
   
 html
 body
@@ -41,7 +43,7 @@ a
       color $hoverColor
   
 .section
-  border-radius 4px
+  borderRadius()
   margin-bottom 20px
   position relative
   background whitesmoke
@@ -130,9 +132,9 @@ ul
   font-size 32px
   right 0
   a
+    textglow()
     text-decoration none
     color white
-    textglow()
     padding 5px
     cursor pointer
     transition color .5s ease-out
@@ -171,7 +173,7 @@ ul
     margin-bottom 5px
   input
   textarea
-    border-radius 2px
+    borderRadius()
     border 1px solid $blue
     padding 5px
     color $blue
@@ -192,7 +194,7 @@ ul
     font-size 16px
     font-family inherit
     padding 7px 17px
-    border-radius 4px
+    borderRadius()
     float left
     span
       color $hoverColor 
@@ -217,13 +219,13 @@ ul
   &.expanded
     padding-left 600px
     padding-right 600px
-  #projects-list
+  ul#projects-list
     position relative
     z-index 1001
     perspective 1600
     width 185px 
     margin 0 auto
-    li
+    li.project
       position absolute
       transform-origin 0 275px
       font-size 24px
@@ -234,14 +236,14 @@ ul
         padding 5px
         width 195px
         height 295px
-        border-radius 4px
+        borderRadius()
         background rgba(255, 255, 255, .5)
         border 3px solid rgba(255, 255, 255, .3)
         .inner
           background white
           width 100%
           height 100%
-          border-radius 4px
+          borderRadius()
           & > label
             padding 5px
         &.back
@@ -267,7 +269,7 @@ ul
             padding 5px
             .tech
               color white
-              border-radius 4px
+              borderRadius()
               padding 3px
               float left
               margin 5px 5px 0 0
@@ -303,7 +305,7 @@ ul
           box-shadow -11px 10px 31px rgba(68, 68, 68, .09)
           cursor pointer
       img
-        border-radius 4px
+        borderRadius()
         width 100%
         height 100%
 
