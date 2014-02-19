@@ -106,7 +106,7 @@ ul
   color #224e6d
   background #d1d1d1
   box-shadow 6px 6px 19px rgba(0, 0, 0, 0.16)
-  &::before
+  &:before
     content ''
     display block
     position absolute
@@ -156,9 +156,9 @@ ul
       & + textarea
         transition background .5s ease-out
         background $red
-      &::after
+      &:after
         opacity 1 
-    &::after
+    &:after
       transition opacity .5s ease-out
       opacity 0
       color $red
@@ -182,7 +182,7 @@ ul
 
   textarea
     height 100px
-    
+
   #send-mail
     background $blue
     color white
