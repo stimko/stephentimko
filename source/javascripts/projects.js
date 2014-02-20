@@ -28,8 +28,7 @@ $(function(){
     });
   }
 
-  function retractSelectedCard($card, oldDegrees, oldScale, newSelected){
-    newSelected = typeof newSelected !== 'undefined' ? newSelected : true;
+  function retractCard($card, oldDegrees, oldScale){
     isAnimatingOut = true;
     $selectedCard = null;
     $retractingCard = $card;
@@ -117,7 +116,7 @@ $(function(){
       $elem.css({'opacity': 1});
       initialHover = true;
       if ($selectedCard){     
-        retractSelectedCard($selectedCard, selectedCardDegrees, selectedScale);
+        retractCard($selectedCard, selectedCardDegrees, selectedScale);
         flipCard($elem);
       } else {
         $('#projects').transition({paddingLeft:'555px'}, 500);
@@ -165,7 +164,7 @@ $(function(){
             addMouseListeners($card);
           }    
         });  
-        retractSelectedCard($card, selectedCardDegrees, selectedScale, false);
+        retractCard($card, selectedCardDegrees, selectedScale);
       });
     });
   }
