@@ -2,11 +2,10 @@ h2.section-header.projects-header Projects
 #projects.section
 	ul#projects-list
 		each project in projects
-			li(class='project')
+			li.project
 				.face.front
 					.inner
 						img(src= project.image_url)
-						//label= project.description
 				.face.back
 					.inner
 						a.project-name(href= project.url, target= "_blank")= project.name
