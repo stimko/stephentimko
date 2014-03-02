@@ -3,6 +3,7 @@ global-reset()
 $blue = #224e6d
 $red = rgba(235, 28, 0, 1)
 $hoverColor = #11C47D
+$padding = 5px
 borderRadius()
   border-radius 4px
 textglow()
@@ -135,7 +136,7 @@ ul
     textglow()
     text-decoration none
     color white
-    padding 5px
+    padding $padding
     cursor pointer
     transition color .5s ease-out
     &:hover
@@ -175,7 +176,7 @@ ul
   textarea
     borderRadius()
     border 1px solid $blue
-    padding 5px
+    padding $padding
     color $blue
     width 100%
     max-width 400px
@@ -233,24 +234,24 @@ ul
       .face
         position absolute
         backface-visibility hidden
-        padding 5px
+        padding $padding
         width 195px
         height 295px
         borderRadius()
         background rgba(255, 255, 255, .5)
         border 3px solid rgba(255, 255, 255, .3)
         .inner
+          borderRadius()
           background white
           width 100%
           height 100%
-          borderRadius()
           & > label
-            padding 5px
+            padding $padding
         &.back
           box-shadow -8px 8px 39px rgba(0, 0, 0, 0.21)
           transform rotateY(180deg)
           .project-name
-            padding 5px
+            padding $padding
             color #003457 
             font-size 19px
             display block
@@ -258,7 +259,7 @@ ul
             width 164px
           .close
             color #00548D
-            padding 5px
+            padding $padding
             position absolute
             top 5px
             right 5px
@@ -266,7 +267,7 @@ ul
             font-size 20px
           .technology
             font-size 14px
-            padding 5px
+            padding $padding
             .tech
               color white
               borderRadius()

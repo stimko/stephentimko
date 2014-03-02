@@ -2,7 +2,7 @@ $(function(){
   function validate_form(){
     var validations = [];
     validations.push(validate($('#email'), new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\\s*$")));
-    validations.push(validate($('#message'), new RegExp("^([A-z]+\\s*)+$")));
+    validations.push(validate($('#message'), new RegExp("^([A-z0-9]*\\d*\\s*\\-*\\(*\\)*\\,*\\!*\\.*\\;*\\'*\\?*)+$")));
     validations.push(validate($('#name'), new RegExp("^([A-z]+\\s*)+$")));
     return reduce(validations);
   }
@@ -21,7 +21,7 @@ $(function(){
     value = $input.val();
     $label = $input.prev('label');
 
-    if(!value.match(regex)){
+    if(!value.match(regex) || value === ''){
       $label.addClass('invalid');
       $('.email-message').html('Please fix invalid fields.');
       return false;

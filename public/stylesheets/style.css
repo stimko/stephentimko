@@ -49,7 +49,7 @@ ul li{list-style-type:none}
 #projects ul#projects-list{position:relative;z-index:1001;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600;width:185px;margin:0 auto;}
 #projects ul#projects-list li.project{position:absolute;-webkit-transform-origin:0 275px;-moz-transform-origin:0 275px;-o-transform-origin:0 275px;-ms-transform-origin:0 275px;transform-origin:0 275px;font-size:24px;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d;}
 #projects ul#projects-list li.project .face{position:absolute;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;backface-visibility:hidden;padding:5px;width:195px;height:295px;-webkit-border-radius:4px;border-radius:4px;background:rgba(255,255,255,0.5);border:3px solid rgba(255,255,255,0.3);}
-#projects ul#projects-list li.project .face .inner{background:#fff;width:100%;height:100%;-webkit-border-radius:4px;border-radius:4px;}
+#projects ul#projects-list li.project .face .inner{-webkit-border-radius:4px;border-radius:4px;background:#fff;width:100%;height:100%;}
 #projects ul#projects-list li.project .face .inner > label{padding:5px}
 #projects ul#projects-list li.project .face.back{-webkit-box-shadow:-8px 8px 39px rgba(0,0,0,0.21);box-shadow:-8px 8px 39px rgba(0,0,0,0.21);-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);-o-transform:rotateY(180deg);-ms-transform:rotateY(180deg);transform:rotateY(180deg);}
 #projects ul#projects-list li.project .face.back .project-name{padding:5px;color:#003457;font-size:19px;display:block;position:relative;width:164px}
