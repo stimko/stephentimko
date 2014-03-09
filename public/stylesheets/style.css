@@ -45,7 +45,6 @@ ul li{list-style-type:none}
 #contact #send-mail:hover{color:#11c47d}
 #contact .email-message{float:left;padding-left:10px}
 #projects{padding:75px 150px 50px 150px;height:400px;}
-#projects.expanded{padding-left:600px;padding-right:600px}
 #projects ul#projects-list{position:relative;z-index:1001;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600;width:185px;margin:0 auto;}
 #projects ul#projects-list li.project{position:absolute;-webkit-transform-origin:0 275px;-moz-transform-origin:0 275px;-o-transform-origin:0 275px;-ms-transform-origin:0 275px;transform-origin:0 275px;font-size:24px;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d;}
 #projects ul#projects-list li.project .mobile-item{display:none}

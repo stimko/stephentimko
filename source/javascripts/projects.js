@@ -24,7 +24,7 @@ $(function(){
       $selectedCard.transition({scale:1.2,rotateY:'-180deg', x:'100px'}, 500, function(){
         isAnimatingIn = false;
         assignTimer();
-      }); 
+      });
     });
   }
 
@@ -35,13 +35,13 @@ $(function(){
     $card.css('z-index', 0);
     $card.transition({scale:oldScale, rotateY:'0deg', x:'0'}, 500, function(){
       $card.transition({rotate:oldDegrees}, 300, function(){
-        if (!phantomHover){ 
+        if (!phantomHover){
           addMouseListeners($card);
         }
         $retractingCard = null;
-        isAnimatingOut = false; 
+        isAnimatingOut = false;
       });
-    }); 
+    });
   }
 
   function removeMouseListeners($elem){
@@ -52,7 +52,7 @@ $(function(){
     clearTimeout(stackTimer);
     stackTimer = setTimeout(function(){
       if (initialHover){
-        $projects.not($retractingCard).not($selectedCard).transition({opacity:1}, 300);     
+        $projects.not($retractingCard).not($selectedCard).transition({opacity:1}, 300);
       }
     }, 750);
   }
@@ -88,7 +88,7 @@ $(function(){
       hoverTimer = setTimeout(function(){
         $elem.css('z-index', 1);
       }, 300);
-      $elem.css('z-index', 0);           
+      $elem.css('z-index', 0);
     });
 
     $elem.on('mouseenter', function(event){
@@ -97,7 +97,7 @@ $(function(){
 
     $elem.on('mousedown', function(event){
       event.stopImmediatePropagation();
-      $(this).css('scale', $(this).css('scale') - 0.01); 
+      $(this).css('scale', $(this).css('scale') - 0.01);
     });
 
     $elem.on('mouseleave', function(event){
@@ -115,7 +115,7 @@ $(function(){
       removeMouseListeners($elem);
       $elem.css({'opacity': 1});
       initialHover = true;
-      if ($selectedCard){     
+      if ($selectedCard){
         retractCard($selectedCard, selectedCardDegrees, selectedScale);
         flipCard($elem);
       } else {
@@ -135,8 +135,9 @@ $(function(){
     $('#menu li a').on('click', function(event){
       $( this ).mouseout().mouseleave();
       var sectionName = $(this).attr('href').split('/')[1],
-        currentOffset = $('#' + sectionName).offset().top;
-      $('body').scrollTo(currentOffset - 96, 500);  
+        currentOffset = $('#' + sectionName).offset().top,
+        scroll = (currentOffset - 96) > 0 ? currentOffset - 96 : 0;
+      $('body').scrollTo(scroll, 500);
     });
   }
 
@@ -148,13 +149,13 @@ $(function(){
       degreeOffset += 9;
       scaleOffset += 0.02;
       addMouseListeners($elem);
-      
+
       $('.back .close', $elem).on('click', function(event){
         if (isAnimatingIn || isAnimatingOut){
           return;
         }
         event.stopImmediatePropagation();
-        $('#projects').transition({paddingLeft:'225px'}, 500);
+        $('#projects').transition({paddingLeft:'150px'}, 500);
         var $card = $(event.currentTarget).closest('li');
         phantomHover = true;
         $card.on('mouseleave.phantom', function(){
@@ -162,8 +163,8 @@ $(function(){
           phantomHover = false;
           if(!isAnimatingOut){
             addMouseListeners($card);
-          }    
-        });  
+          }
+        });
         retractCard($card, selectedCardDegrees, selectedScale);
       });
     });
@@ -173,6 +174,6 @@ $(function(){
     configureMenu();
     configureProjects();
   }
-   
+
   init();
 });
