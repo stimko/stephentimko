@@ -74,7 +74,7 @@ ul li{list-style-type:none}
 #projects ul#projects-list li.project .face.front{-webkit-box-shadow:-11px 10px 31px rgba(68,68,68,0.09);box-shadow:-11px 10px 31px rgba(68,68,68,0.09);cursor:pointer}
 #projects ul#projects-list li.project img{-webkit-border-radius:4px;border-radius:4px;width:100%}
 @media all and (max-width: 1085px){#projects ul#projects-list{z-index:999}
-}@media all and (max-width: 600px){#menu{display:none}
+}@media all and (max-width: 800px){#menu{display:none}
 .content{padding:80px 12px 15px 12px}
 .social{margin-top:4px;font-size:26px;}
 .social a{padding:2px;display:block}

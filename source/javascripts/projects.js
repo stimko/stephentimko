@@ -21,7 +21,7 @@ $(function(){
     selectedCardDegrees = $selectedCard.css('rotate');
     $selectedCard.css('z-index', 1);
     $selectedCard.transition({rotate:0}, 300, function(){
-      $selectedCard.transition({scale:1.2,rotateY:'-180deg', x:'170px'}, 500, function(){
+      $selectedCard.transition({scale:1.2,rotateY:'-180deg', x:'100px'}, 500, function(){
         isAnimatingIn = false;
         assignTimer();
       }); 
@@ -119,7 +119,7 @@ $(function(){
         retractCard($selectedCard, selectedCardDegrees, selectedScale);
         flipCard($elem);
       } else {
-        $('#projects').transition({paddingLeft:'555px'}, 500);
+        $('#projects').transition({paddingLeft:'325px'}, 500);
         flipCard($elem);
       }
       selectedScale = hoverScale;
