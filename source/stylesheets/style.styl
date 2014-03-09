@@ -8,7 +8,7 @@ borderRadius()
   border-radius 4px
 textglow()
   text-shadow 0px 1px 3px rgba(0,183,255,1)
-  
+
 html
 body
   height 100%
@@ -16,7 +16,7 @@ body
   font 18px 'Didact Gothic', serif
   background white
 
-a 
+a
   color $blue
   text-decoration none
   &:hover
@@ -29,7 +29,7 @@ a
   transition background .5s ease-out
   top 68px
   border-right 1px solid $blue
-  border-bottom 3px solid $blue  
+  border-bottom 3px solid $blue
   position fixed
   box-shadow -8px 5px 26px rgba(0, 0, 0, 0.21)
   li
@@ -42,7 +42,7 @@ a
     background $blue
     a
       color $hoverColor
-  
+
 .section
   borderRadius()
   margin-bottom 15px
@@ -144,7 +144,7 @@ ul
 
 #about
   font-size 24px
-  a 
+  a
     font-weight bold
 
 #contact
@@ -159,12 +159,12 @@ ul
         transition background .5s ease-out
         background $red
       &:after
-        opacity 1 
+        opacity 1
     &:after
       transition opacity .5s ease-out
       opacity 0
       color $red
-      margin-left 5px 
+      margin-left 5px
       content '\F088 '
       font-family FontAwesome
       font-size 16px
@@ -198,7 +198,7 @@ ul
     borderRadius()
     float left
     span
-      color $hoverColor 
+      color $hoverColor
       display none
     &[disabled]
       cursor auto
@@ -224,7 +224,7 @@ ul
     position relative
     z-index 1001
     perspective 1600
-    width 185px 
+    width 185px
     margin 0 auto
     li.project
       position absolute
@@ -254,7 +254,7 @@ ul
           transform rotateY(180deg)
           .project-name
             padding $padding
-            color #003457 
+            color #003457
             font-size 19px
             display block
             position relative
@@ -294,7 +294,7 @@ ul
                 background rgb(255, 99, 11)
               &.Stylus
                 background #a1bc06
-              &.Knockout 
+              &.Knockout
                 background rgb(255, 99, 11)
               &.Durandal
                 background rgb(189, 0, 0)
@@ -338,7 +338,7 @@ ul
       position static
       z-index 0
       perspective none
-      width auto 
+      width auto
       margin auto
       li.project
         position static
@@ -354,8 +354,10 @@ ul
           display block
           transition background .5s ease-out
           &:hover
-            background $hoverColor  
+            background $hoverColor
           a
+            display block
+            width 100%
             color $blue
         .face
           display none
