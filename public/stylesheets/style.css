@@ -14,7 +14,7 @@ a:hover{text-decoration:underline}
 #menu:hover a{color:#11c47d}
 .section{-webkit-border-radius:4px;border-radius:4px;margin-bottom:20px;position:relative;background:#f5f5f5;}
 .section .section-content{padding:18px}
-.content{padding:96px 63px 10px 63px;min-width:676px}
+.content{padding:96px 63px 10px 63px}
 .header{z-index:1000;width:100%;-webkit-border-radius:0;border-radius:0;padding-bottom:4px;-webkit-box-shadow:-8px 5px 8px rgba(0,0,0,0.21);box-shadow:-8px 5px 8px rgba(0,0,0,0.21);background:#224e6d;position:fixed;}
 .header .position{color:#fff;font-size:14px}
 .header .logo{border-top-right-radius:5px;border-top-left-radius:5px;border-bottom-right-radius:8px;border-bottom-left-radius:8px;margin:7px;width:34px;padding:7px;border-right:2px solid;border-top:2px solid;border-left:2px solid;border-bottom:6px solid;color:rgba(23,53,73,0.82);float:left;-webkit-box-shadow:4px 4px 9px rgba(0,0,0,0.29);box-shadow:4px 4px 9px rgba(0,0,0,0.29)}
@@ -48,6 +48,7 @@ ul li{list-style-type:none}
 #projects.expanded{padding-left:600px;padding-right:600px}
 #projects ul#projects-list{position:relative;z-index:1001;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600;width:185px;margin:0 auto;}
 #projects ul#projects-list li.project{position:absolute;-webkit-transform-origin:0 275px;-moz-transform-origin:0 275px;-o-transform-origin:0 275px;-ms-transform-origin:0 275px;transform-origin:0 275px;font-size:24px;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d;}
+#projects ul#projects-list li.project .mobile-item{display:none}
 #projects ul#projects-list li.project .face{position:absolute;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;backface-visibility:hidden;padding:5px;width:195px;height:295px;-webkit-border-radius:4px;border-radius:4px;background:rgba(255,255,255,0.5);border:3px solid rgba(255,255,255,0.3);}
 #projects ul#projects-list li.project .face .inner{-webkit-border-radius:4px;border-radius:4px;background:#fff;width:100%;height:100%;}
 #projects ul#projects-list li.project .face .inner > label{padding:5px}
@@ -71,6 +72,16 @@ ul li{list-style-type:none}
 #projects ul#projects-list li.project .face.back .technology .tech.Robotlegs{background:#f66}
 #projects ul#projects-list li.project .face.back .technology .tech.Facebook{background:#00f}
 #projects ul#projects-list li.project .face.front{-webkit-box-shadow:-11px 10px 31px rgba(68,68,68,0.09);box-shadow:-11px 10px 31px rgba(68,68,68,0.09);cursor:pointer}
-#projects ul#projects-list li.project img{-webkit-border-radius:4px;border-radius:4px;width:100%;height:100%}
-@media all and (max-width: 1085px){#projects #projects-list{z-index:999}
+#projects ul#projects-list li.project img{-webkit-border-radius:4px;border-radius:4px;width:100%}
+@media all and (max-width: 1085px){#projects ul#projects-list{z-index:999}
+}@media all and (max-width: 600px){#menu{display:none}
+.content{padding:96px 12px 0 12px}
+.section-header{display:none}
+#projects{background:#fff;padding:0 !important;height:auto;}
+#projects ul#projects-list{position:static;z-index:0;-webkit-perspective:none;-moz-perspective:none;-ms-perspective:none;perspective:none;width:auto;margin:auto;}
+#projects ul#projects-list li.project{position:static;font-size:24px;-webkit-transform-style:flat;-moz-transform-style:flat;-o-transform-style:flat;-ms-transform-style:flat;transform-style:flat;-webkit-transform:rotate(0) scale(1,1) !important;-moz-transform:rotate(0) scale(1,1) !important;-o-transform:rotate(0) scale(1,1) !important;-ms-transform:rotate(0) scale(1,1) !important;transform:rotate(0) scale(1,1) !important;opacity:1 !important;-ms-filter:none;filter:none;}
+#projects ul#projects-list li.project .mobile-item{-webkit-border-radius:4px;border-radius:4px;background:#f5f5f5;margin-top:5px;padding:10px;display:block;-webkit-transition:background .5s ease-out;-moz-transition:background .5s ease-out;-o-transition:background .5s ease-out;-ms-transition:background .5s ease-out;transition:background .5s ease-out;}
+#projects ul#projects-list li.project .mobile-item:hover{background:#11c47d}
+#projects ul#projects-list li.project .mobile-item a{color:#224e6d}
+#projects ul#projects-list li.project .face{display:none}
 }
