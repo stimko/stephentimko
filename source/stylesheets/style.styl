@@ -234,15 +234,15 @@ i.fa
 #projects
   padding 75px 150px 50px 150px
   height 400px
-  transition padding-left .5s
-  &.expanded
-    padding-left 325px
   ul#projects-list
     position relative
     z-index 1001
     perspective 1600
     width 185px
     margin 0 auto
+    transition transform 300ms ease
+    &.expanded
+      transform translate(175px, 0)
     li.project
       position absolute
       transform-origin 0 275px
@@ -347,14 +347,15 @@ i.fa
     background white
     padding 0
     height auto
-    &.expanded
-      padding-left 0
     ul#projects-list
       position static
       z-index 0
       perspective none
       width auto
       margin auto
+      &.expanded
+        transition transform 300ms ease
+        transform translate(0, 0)
       li.project
         position static
         font-size 24px

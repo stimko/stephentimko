@@ -116,7 +116,7 @@ $(function(){
         retractCard($selectedCard, selectedCardDegrees, selectedScale);
         flipCard($elem);
       } else {
-        $('#projects').addClass('expanded');
+        $('#projects-list').addClass('expanded');
         flipCard($elem);
       }
       selectedScale = hoverScale;
@@ -152,7 +152,7 @@ $(function(){
           return;
         }
         event.stopImmediatePropagation();
-        $('#projects').removeClass('expanded');
+        $('#projects-list').removeClass('expanded');
         var $card = $(event.currentTarget).closest('li');
         retractCard($card, selectedCardDegrees, selectedScale);
       });
