@@ -11,7 +11,7 @@ h2.section-header.projects-header Projects
         .face.back
           .inner
             a.project-name(href= project.url, target= "_blank")= project.name
-            i.icon-remove.close
+            i.fa.fa-chevron-circle-right.close
             .technology
               each tech in project.technology
                 .tech(class= tech)= tech

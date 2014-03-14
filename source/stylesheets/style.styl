@@ -23,12 +23,14 @@ a
     text-decoration underline
 
 #menu
-  border-bottom-right-radius 10px
+  z-index 1
+  border-bottom-left-radius 10px
   padding 11px
   background #E6E6E6
   transition background .5s ease-out
-  top 68px
-  border-right 1px solid $blue
+  top 60px
+  right 0
+  border-left 1px solid $blue
   border-bottom 3px solid $blue
   position fixed
   box-shadow -8px 5px 26px rgba(0, 0, 0, 0.21)
@@ -47,20 +49,34 @@ a
   borderRadius()
   margin-bottom 15px
   position relative
-  background whitesmoke
+  background linear-gradient(top, #F0F0F0, #FDFDFD)
+  &#projects:after
+    content '\f085'
+  &#about:after
+    content '\f018'
+  &#contact:after
+    content '\f0e0'
+  &:after
+    font-family FontAwesome
+    font-size 110px
+    top 8px
+    right 21px
+    position absolute
+    display block
+    color rgba(34, 78, 109, 0.09)
   .section-content
     padding 18px
 
 .content
-  padding 86px 63px 15px 63px
+  padding 84px 20px 15px 20px
 
-.header
+header
   z-index 1000
   width 100%
   border-radius 0
   padding-bottom 4px
   box-shadow 0 5px 8px rgba(0,0,0,0.21)
-  background $blue
+  background linear-gradient(bottom, $blue, #2B6188)
   position fixed
   .position
     color white
@@ -74,9 +90,7 @@ a
     width 34px
     padding 7px
     border-right 2px solid
-    border-top 2px solid
-    border-left 2px solid
-    border-bottom 6px solid
+    border-bottom 2px solid
     color rgba(23, 53, 73, 0.82)
     float left
     box-shadow 4px 4px 9px rgba(0, 0, 0, 0.29)
@@ -106,7 +120,7 @@ ul
   font-size 16px
   display inline-block
   color #224e6d
-  background #d1d1d1
+  background linear-gradient(left, #A5A5A5 0%, #d1d1d1 7%)
   box-shadow 6px 6px 19px rgba(0, 0, 0, 0.16)
   &:before
     content ''
@@ -137,10 +151,13 @@ ul
     color white
     padding $padding
     cursor pointer
-    transition color .5s ease-out
-    &:hover
-      text-shadow none
-      color $hoverColor
+
+a.fa
+i.fa
+  transition color .5s ease-out
+  &:hover
+    text-shadow none
+    color $hoverColor !important
 
 #about
   font-size 24px
@@ -263,7 +280,7 @@ ul
             top 5px
             right 5px
             cursor pointer
-            font-size 20px
+            font-size 25px
           .technology
             font-size 14px
             padding $padding
@@ -321,7 +338,6 @@ ul
     padding 80px 12px 15px 12px
 
   .social
-    margin-top 4px
     font-size 26px
     a
       padding 2px
