@@ -78,11 +78,12 @@ a.fa:hover,i.fa:hover{text-shadow:none;color:#11c47d !important}
 #projects ul#projects-list li.project .face.back .technology .tech.Facebook{background:#00f}
 #projects ul#projects-list li.project .face.front{-webkit-box-shadow:-11px 10px 31px rgba(68,68,68,0.09);box-shadow:-11px 10px 31px rgba(68,68,68,0.09);cursor:pointer}
 #projects ul#projects-list li.project img{-webkit-border-radius:4px;border-radius:4px;width:100%}
-@media all and (max-width: 1085px){#projects ul#projects-list{z-index:999}
+@media all and (max-width: 1085px){#projects{-webkit-transition:none;-moz-transition:none;-o-transition:none;-ms-transition:none;transition:none;}
+#projects ul#projects-list{z-index:999}
 }@media all and (max-width: 800px){#menu{display:none}
 .social{font-size:26px;}
 .social a{padding:2px;display:block}
-#projects{background:#fff;padding:0;height:auto;-webkit-transition:none;-moz-transition:none;-o-transition:none;-ms-transition:none;transition:none;}
+#projects{background:#fff;padding:0;height:auto;}
 #projects.expanded{padding-left:0}
 #projects ul#projects-list{position:static;z-index:0;-webkit-perspective:none;-moz-perspective:none;-ms-perspective:none;perspective:none;width:auto;margin:auto;}
 #projects ul#projects-list li.project{position:static;font-size:24px;-webkit-transform-style:flat;-moz-transform-style:flat;-o-transform-style:flat;-ms-transform-style:flat;transform-style:flat;-webkit-transform:rotate(0) scale(1,1) !important;-moz-transform:rotate(0) scale(1,1) !important;-o-transform:rotate(0) scale(1,1) !important;-ms-transform:rotate(0) scale(1,1) !important;transform:rotate(0) scale(1,1) !important;opacity:1 !important;-ms-filter:none;filter:none;}

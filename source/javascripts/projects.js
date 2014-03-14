@@ -3,7 +3,6 @@ $(function(){
     degreeOffset = -45,
     scaleOffset = 0.9,
     initialHover = true,
-    phantomHover = false,
     selectedCardDegrees = '',
     isAnimatingIn = false,
     isAnimatingOut = false,
@@ -35,9 +34,7 @@ $(function(){
     $card.css('z-index', 0);
     $card.transition({scale:oldScale, rotateY:'0deg', x:'0'}, 500, function(){
       $card.transition({rotate:oldDegrees}, 300, function(){
-        if (!phantomHover){
-          addMouseListeners($card);
-        }
+        addMouseListeners($card);
         $retractingCard = null;
         isAnimatingOut = false;
       });
@@ -157,14 +154,6 @@ $(function(){
         event.stopImmediatePropagation();
         $('#projects').removeClass('expanded');
         var $card = $(event.currentTarget).closest('li');
-        phantomHover = true;
-        $card.on('mouseleave.phantom', function(){
-          $card.off('mouseleave.phantom');
-          phantomHover = false;
-          if(!isAnimatingOut){
-            addMouseListeners($card);
-          }
-        });
         retractCard($card, selectedCardDegrees, selectedScale);
       });
     });
