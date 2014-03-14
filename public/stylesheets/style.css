@@ -49,7 +49,7 @@ a.fa:hover,i.fa:hover{text-shadow:none;color:#11c47d !important}
 #contact #send-mail[disabled]:hover{color:#fff}
 #contact #send-mail:hover{color:#11c47d}
 #contact .email-message{float:left;padding-left:10px}
-#projects{padding:75px 150px 50px 150px;height:400px;}
+#projects{padding:75px 150px 50px 150px;height:400px;-webkit-transition:padding-left .5s;-moz-transition:padding-left .5s;-o-transition:padding-left .5s;-ms-transition:padding-left .5s;transition:padding-left .5s;}
 #projects.expanded{padding-left:325px}
 #projects ul#projects-list{position:relative;z-index:1001;-webkit-perspective:1600;-moz-perspective:1600;-ms-perspective:1600;perspective:1600;width:185px;margin:0 auto;}
 #projects ul#projects-list li.project{position:absolute;-webkit-transform-origin:0 275px;-moz-transform-origin:0 275px;-o-transform-origin:0 275px;-ms-transform-origin:0 275px;transform-origin:0 275px;font-size:24px;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;-ms-transform-style:preserve-3d;transform-style:preserve-3d;}
@@ -82,7 +82,7 @@ a.fa:hover,i.fa:hover{text-shadow:none;color:#11c47d !important}
 }@media all and (max-width: 800px){#menu{display:none}
 .social{font-size:26px;}
 .social a{padding:2px;display:block}
-#projects{background:#fff;padding:0;height:auto;}
+#projects{background:#fff;padding:0;height:auto;-webkit-transition:none;-moz-transition:none;-o-transition:none;-ms-transition:none;transition:none;}
 #projects.expanded{padding-left:0}
 #projects ul#projects-list{position:static;z-index:0;-webkit-perspective:none;-moz-perspective:none;-ms-perspective:none;perspective:none;width:auto;margin:auto;}
 #projects ul#projects-list li.project{position:static;font-size:24px;-webkit-transform-style:flat;-moz-transform-style:flat;-o-transform-style:flat;-ms-transform-style:flat;transform-style:flat;-webkit-transform:rotate(0) scale(1,1) !important;-moz-transform:rotate(0) scale(1,1) !important;-o-transform:rotate(0) scale(1,1) !important;-ms-transform:rotate(0) scale(1,1) !important;transform:rotate(0) scale(1,1) !important;opacity:1 !important;-ms-filter:none;filter:none;}
